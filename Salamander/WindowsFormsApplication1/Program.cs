@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Salamander
+namespace WindowsFormsApplication1
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Salamander
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new f_open_resave());
+            Application.Run(new Form1());
         }
     }
 }

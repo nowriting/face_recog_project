@@ -1,6 +1,6 @@
 ﻿namespace Salamander
 {
-    partial class Form1
+    partial class open_camera
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // open_camera
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(643, 313);
+            this.Name = "open_camera";
+            this.Text = "open_camera";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
