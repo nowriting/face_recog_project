@@ -34,6 +34,8 @@
             this.picbox_preview1 = new System.Windows.Forms.PictureBox();
             this.picbox_preview2 = new System.Windows.Forms.PictureBox();
             this.cmd_capture = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.cmd_save = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_preview1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbox_preview2)).BeginInit();
@@ -101,11 +103,22 @@
             this.cmd_capture.UseVisualStyleBackColor = true;
             this.cmd_capture.Click += new System.EventHandler(this.cmd_capture_Click);
             // 
+            // cmd_save
+            // 
+            this.cmd_save.Location = new System.Drawing.Point(439, 12);
+            this.cmd_save.Name = "cmd_save";
+            this.cmd_save.Size = new System.Drawing.Size(75, 23);
+            this.cmd_save.TabIndex = 4;
+            this.cmd_save.Text = "Save";
+            this.cmd_save.UseVisualStyleBackColor = true;
+            this.cmd_save.Click += new System.EventHandler(this.cmd_save_Click);
+            // 
             // f_open_camera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 313);
+            this.Controls.Add(this.cmd_save);
             this.Controls.Add(this.cmd_capture);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.list_selectCamera);
@@ -129,5 +142,7 @@
         private System.Windows.Forms.PictureBox picbox_preview1;
         private System.Windows.Forms.PictureBox picbox_preview2;
         private System.Windows.Forms.Button cmd_capture;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button cmd_save;
     }
 }

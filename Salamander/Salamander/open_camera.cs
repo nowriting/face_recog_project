@@ -60,6 +60,17 @@ namespace Salamander
         {
             picbox_preview2.Image = (Bitmap)picbox_preview1.Image.Clone();
         }
+
+        private void cmd_save_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog browsefiles = new SaveFileDialog();
+            browsefiles.Filter = "JPG(*.JPG)|*.jpg";
+
+            if (browsefiles.ShowDialog() == DialogResult.OK)
+            {
+                picbox_preview2.Image.Save(browsefiles.FileName);
+            }
+        }
     }
 
 }
