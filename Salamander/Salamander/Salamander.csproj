@@ -67,6 +67,12 @@
     <Compile Include="f_open_resave.Designer.cs">
       <DependentUpon>f_open_resave.cs</DependentUpon>
     </Compile>
+    <Compile Include="f_read_resize_imgs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_read_resize_imgs.Designer.cs">
+      <DependentUpon>f_read_resize_imgs.cs</DependentUpon>
+    </Compile>
     <Compile Include="open_camera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="f_open_resave.resx">
       <DependentUpon>f_open_resave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_read_resize_imgs.resx">
+      <DependentUpon>f_read_resize_imgs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="open_camera.resx">
       <DependentUpon>open_camera.cs</DependentUpon>
