@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 333);
+            this.ClientSize = new System.Drawing.Size(778, 349);
             this.Name = "f_read_resize_imgs";
             this.Text = "f_read_resize_imgs";
             this.ResumeLayout(false);
