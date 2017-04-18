@@ -1,17 +1,18 @@
-﻿using Emgu.CV;
-using Emgu.CV.Cuda;
+﻿//----------------------------------------------------------------------------
+//  Copyright (C) 2004-2016 by EMGU Corporation. All rights reserved.       
+//----------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using Emgu.CV;
 using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-
+using Emgu.CV.Cuda;
 
 namespace Salamander
 {
@@ -25,11 +26,9 @@ namespace Salamander
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new f_open_resave());
-            //Application.Run(new f_open_camera());
-            // Application.Run(new f_face_detect());
             Run();
         }
+
 
 
         static void Run()
@@ -38,8 +37,8 @@ namespace Salamander
 
             //Read the files as an 8-bit Bgr image  
 
-            image = new UMat("lena.jpg", ImreadModes.Color); //UMat version
-            //image = new Mat("lena.jpg", ImreadModes.Color); //CPU version
+            image = new UMat("me.jpg", ImreadModes.Color); //UMat version
+                                                             //image = new Mat("lena.jpg", ImreadModes.Color); //CPU version
 
             long detectionTime;
             List<Rectangle> faces = new List<Rectangle>();
@@ -64,5 +63,6 @@ namespace Salamander
                    : "CPU",
                    detectionTime));
         }
+
     }
 }
