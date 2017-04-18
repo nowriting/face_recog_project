@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="f_face_detect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_face_detect.Designer.cs">
+      <DependentUpon>f_face_detect.cs</DependentUpon>
+    </Compile>
     <Compile Include="f_open_resave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +79,11 @@
     <Compile Include="f_read_resize_imgs.Designer.cs">
       <DependentUpon>f_read_resize_imgs.cs</DependentUpon>
     </Compile>
-    <Compile Include="open_camera.cs">
+    <Compile Include="f_open_camera.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="open_camera.Designer.cs">
-      <DependentUpon>open_camera.cs</DependentUpon>
+    <Compile Include="f_open_camera.Designer.cs">
+      <DependentUpon>f_open_camera.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,8 +93,8 @@
     <EmbeddedResource Include="f_read_resize_imgs.resx">
       <DependentUpon>f_read_resize_imgs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="open_camera.resx">
-      <DependentUpon>open_camera.cs</DependentUpon>
+    <EmbeddedResource Include="f_open_camera.resx">
+      <DependentUpon>f_open_camera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -111,6 +117,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="haarcascade_eye.xml" />
+    <Content Include="haarcascade_frontalface_default.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
