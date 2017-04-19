@@ -26,6 +26,9 @@ namespace Salamander
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new f_open_resave());
+            Application.Run(new f_open_camera());
+            // Application.Run(new f_face_detect());
             Run();
         }
 
