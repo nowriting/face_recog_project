@@ -26,12 +26,13 @@ namespace Salamander
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new f_main());
+            // Application.Run(new f_main());
             // Application.Run(new f_open_resave());
             // Application.Run(new f_open_camera());
             // Application.Run(new f_face_detect());
-            // Run();
+             Run();
         }
+
 
 
 
@@ -53,8 +54,14 @@ namespace Salamander
               faces, eyes,
               out detectionTime);
 
-            foreach (Rectangle face in faces)
+            foreach (Rectangle face in faces) {
                 CvInvoke.Rectangle(image, face, new Bgr(Color.Black).MCvScalar, 3);
+                Bitmap bmpImg = image.Bitmap;
+                Bitmap CroppedImage = CropImage(bmpImg, face);
+                Image<Bgr, Byte> myImage = new Image<Bgr, Byte>(CroppedImage);
+                CvInvoke.Imshow("picture", myImage);
+            }
+                
             foreach (Rectangle eye in eyes)
                 CvInvoke.Rectangle(image, eye, new Bgr(Color.AntiqueWhite).MCvScalar, 3);
 
@@ -68,5 +75,19 @@ namespace Salamander
                    detectionTime));
         }
 
+
+        public static Bitmap CropImage(Bitmap source, Rectangle section)
+        {
+            // An empty bitmap which will hold the cropped image
+            Bitmap bmp = new Bitmap(section.Width, section.Height);
+
+            Graphics g = Graphics.FromImage(bmp);
+
+            // Draw the given area (section) of the source image
+            // at location 0,0 on the empty bitmap (bmp)
+            g.DrawImage(source, 0, 0, section, GraphicsUnit.Pixel);
+
+            return bmp;
+        }
     }
 }
