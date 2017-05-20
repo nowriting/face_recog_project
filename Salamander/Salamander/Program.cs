@@ -40,7 +40,7 @@ namespace Salamander
 
             //Read the files as an 8-bit Bgr image  
 
-            image = new UMat("lena.jpg", ImreadModes.Color); //UMat version
+            image = new UMat("ilva.jpg", ImreadModes.Color); //UMat version
                                                              //image = new Mat("lena.jpg", ImreadModes.Color); //CPU version
 
             long detectionTime;
@@ -53,14 +53,14 @@ namespace Salamander
               out detectionTime);
 
             foreach (Rectangle face in faces)
-                CvInvoke.Rectangle(image, face, new Bgr(Color.Red).MCvScalar, 2);
+                CvInvoke.Rectangle(image, face, new Bgr(Color.Black).MCvScalar, 3);
             foreach (Rectangle eye in eyes)
-                CvInvoke.Rectangle(image, eye, new Bgr(Color.Blue).MCvScalar, 2);
+                CvInvoke.Rectangle(image, eye, new Bgr(Color.AntiqueWhite).MCvScalar, 3);
 
             //display the image 
             using (InputArray iaImage = image.GetInputArray())
                 ImageViewer.Show(image, String.Format(
-                   "Completed face and eye detection using {0} in {1} milliseconds",
+                   "Sejas, acu un mutes atpazīšana {0} milisekundēs: {1}s",
                    (iaImage.Kind == InputArray.Type.CudaGpuMat && CudaInvoke.HasCuda) ? "CUDA" :
                    (iaImage.IsUMat && CvInvoke.UseOpenCL) ? "OpenCL"
                    : "CPU",
