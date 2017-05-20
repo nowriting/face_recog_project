@@ -73,17 +73,16 @@ namespace Salamander
                     Bitmap bmpImg = image.Bitmap;
                     // a call to cropImage function, input: source and rectangle
                     Bitmap CroppedImage = CropImage(bmpImg, face);
-                    // save cropped image
-                    //Bitmap newbie = (Bitmap)CroppedImage.Clone();
-                    //newbie.Save(folder, System.Drawing.Imaging.ImageFormat.Bmp);
                     // cropped bitmap converted to image
                     Image<Bgr, Byte> myImage = new Image<Bgr, Byte>(CroppedImage);
                     // image displayed
                     CvInvoke.Imshow("picture", myImage);
+                    // generates unique name for the cropped face image
                     var myUniqueFileName = string.Format("/{0}.bmp", Guid.NewGuid());
+                    // establishes file path where to save the cropped face image
                     string namesy = folder + myUniqueFileName;
+                    // saves the cropped face image
                     myImage.Save(namesy);
-                    
                     
                 }
 
