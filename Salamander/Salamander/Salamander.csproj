@@ -104,6 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DetectFace.cs" />
+    <Compile Include="f_main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_main.Designer.cs">
+      <DependentUpon>f_main.cs</DependentUpon>
+    </Compile>
     <Compile Include="f_open_resave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,18 @@
     </Compile>
     <Compile Include="f_open_camera.Designer.cs">
       <DependentUpon>f_open_camera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f_results.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_results.Designer.cs">
+      <DependentUpon>f_results.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f_settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_settings.Designer.cs">
+      <DependentUpon>f_settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
