@@ -19,9 +19,6 @@ namespace Salamander
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
@@ -34,56 +31,58 @@ namespace Salamander
              Run();
         }
 
-
-
-
         static void Run()
         {
             IImage image;
-            // getting image from project file directory
-            // string imgFromFile = @"testImages\ilva.jpg";
-            string folder = @"testImages";
-            //Read the files as an 8-bit Bgr image  
+            Bitmap bmpImg;
+            Bitmap croppedBitmap;
+            string uniqueImgPath;
+            string folderImgSource = @"testImages/SourceImg";
+            string folderImgFaces = @"testImages/GeneratedFaces";
 
-            var files = Directory.GetFiles(folder, "*.jpg", SearchOption.AllDirectories);
-            List<string> imageFiles = new List<string>();
-            foreach (string filename in files)
+            //Read all the JPG files in the source image folder
+            var sourceImgFiles = Directory.GetFiles(folderImgSource, "*.jpg", SearchOption.AllDirectories);
+            List<string> imgFiles = new List<string>();
+            foreach (string fileName in sourceImgFiles)
             {
-                image = new UMat(filename, ImreadModes.Color);
-
-
-                //     image = new UMat(imgFromFile, ImreadModes.Color); //UMat version
-                //image = new Mat("lena.jpg", ImreadModes.Color); //CPU version
+                image = new UMat(fileName, ImreadModes.Color);
 
                 long detectionTime;
                 List<Rectangle> faces = new List<Rectangle>();
                 List<Rectangle> eyes = new List<Rectangle>();
 
+                // call the DetectFace class
                 DetectFace.Detect(
                   image, "haarcascade_frontalface_default.xml", "haarcascade_eye.xml",
                   faces, eyes,
                   out detectionTime);
 
-
+                // Loop over every face found
                 foreach (Rectangle face in faces)
                 {
-                    // the recangle drawn in the found face
-                    CvInvoke.Rectangle(image, face, new Bgr(Color.Black).MCvScalar, 3);
-                    // source image converted to bitmap
-                    Bitmap bmpImg = image.Bitmap;
-                    // a call to cropImage function, input: source and rectangle
-                    Bitmap CroppedImage = CropImage(bmpImg, face);
+                    // the rectangle is drawn around the detected face
+                    CvInvoke.Rectangle(image, face, new Bgr(Color.White).MCvScalar, 3);
+
+                    // Source image converted to bitmap
+                    bmpImg = image.Bitmap;
+
+                    // a call to cropBitmap function, input: source and rectangle
+                    croppedBitmap = cropBitmap(bmpImg, face);
+
                     // cropped bitmap converted to image
-                    Image<Bgr, Byte> myImage = new Image<Bgr, Byte>(CroppedImage);
-                    // image displayed
-                    CvInvoke.Imshow("picture", myImage);
+                    Image<Bgr, Byte> croppedImg = new Image<Bgr, Byte>(croppedBitmap);
+
+                    // image displayed: test
+                    CvInvoke.Imshow("Cropped Face Image", croppedImg);
+
                     // generates unique name for the cropped face image
-                    var myUniqueFileName = string.Format("/{0}.bmp", Guid.NewGuid());
+                    var uniqueImgName = string.Format("/{0}.bmp", Guid.NewGuid());
+
                     // establishes file path where to save the cropped face image
-                    string namesy = folder + myUniqueFileName;
-                    // saves the cropped face image
-                    myImage.Save(namesy);
-                    
+                    uniqueImgPath = folderImgFaces + uniqueImgName;
+
+                    // saves the cropped face image to a specific directory
+                    croppedImg.Save(uniqueImgPath);
                 }
 
                 foreach (Rectangle eye in eyes)
@@ -99,21 +98,19 @@ namespace Salamander
                        detectionTime));
             }
         }
-        
 
-        public static Bitmap CropImage(Bitmap source, Rectangle section)
+        public static Bitmap cropBitmap(Bitmap sourceImg, Rectangle generatedFace)
         {
-            // An empty bitmap which will hold the cropped image
-            Bitmap bmp = new Bitmap(section.Width, section.Height);
+            int bitmapHeight = generatedFace.Height;
+            int bitmapWidth = generatedFace.Width;
 
-            Graphics g = Graphics.FromImage(bmp);
-
-            // Draw the given area (section) of the source image
-            // at location 0,0 on the empty bitmap (bmp)
-            g.DrawImage(source, 0, 0, section, GraphicsUnit.Pixel);
+            // empty bitmap to store the cropped bmp
+            Bitmap croppedBitmap = new Bitmap(bitmapWidth, bitmapHeight);
+            Graphics g = Graphics.FromImage(croppedBitmap);
+            // draw bitmap
+            g.DrawImage(sourceImg, 0, 0, generatedFace, GraphicsUnit.Pixel);
             
-
-            return bmp;
+            return croppedBitmap;
         }
     }
 }
