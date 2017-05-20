@@ -49,6 +49,7 @@
             this.b_take_photo.TabIndex = 0;
             this.b_take_photo.Text = "Uzņemt foto";
             this.b_take_photo.UseVisualStyleBackColor = false;
+            this.b_take_photo.Click += new System.EventHandler(this.b_take_photo_Click);
             // 
             // b_open_resave
             // 
@@ -64,6 +65,7 @@
             this.b_open_resave.TabIndex = 1;
             this.b_open_resave.Text = "Atvērt foto";
             this.b_open_resave.UseVisualStyleBackColor = false;
+            this.b_open_resave.Click += new System.EventHandler(this.b_open_resave_Click);
             // 
             // b_recognize
             // 
@@ -78,6 +80,7 @@
             this.b_recognize.TabIndex = 2;
             this.b_recognize.Text = "Atpazīt seju";
             this.b_recognize.UseVisualStyleBackColor = false;
+            this.b_recognize.Click += new System.EventHandler(this.b_recognize_Click);
             // 
             // b_settings
             // 
@@ -92,6 +95,7 @@
             this.b_settings.TabIndex = 3;
             this.b_settings.Text = "Iestatījumi";
             this.b_settings.UseVisualStyleBackColor = false;
+            this.b_settings.Click += new System.EventHandler(this.b_settings_Click);
             // 
             // f_main
             // 
