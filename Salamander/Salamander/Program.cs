@@ -1,7 +1,4 @@
-﻿//----------------------------------------------------------------------------
-//  Copyright (C) 2004-2016 by EMGU Corporation. All rights reserved.       
-//----------------------------------------------------------------------------
-
+﻿
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -41,21 +38,18 @@ namespace Salamander
             string folderImgFaces = @"testImages/GeneratedFaces";
 
             //Read all the JPG files in the source image folder
-            var sourceImgFiles = Directory.GetFiles(folderImgSource, "*.jpg", SearchOption.AllDirectories);
+            var sourceImgFiles = Directory.GetFiles(folderImgSource, "*.*", SearchOption.AllDirectories);
             List<string> imgFiles = new List<string>();
+
             foreach (string fileName in sourceImgFiles)
             {
+                // convert source image to UMat format (an array class)
                 image = new UMat(fileName, ImreadModes.Color);
 
-                long detectionTime;
                 List<Rectangle> faces = new List<Rectangle>();
-                List<Rectangle> eyes = new List<Rectangle>();
 
-                // call the DetectFace class
-                DetectFace.Detect(
-                  image, "haarcascade_frontalface_default.xml", "haarcascade_eye.xml",
-                  faces, eyes,
-                  out detectionTime);
+                // call FindFace class to find faces in source imgs
+                FindFace.FindFaceRegions(image, "haarcascade_frontalface_default.xml", faces);
 
                 // Loop over every face found
                 foreach (Rectangle face in faces)
@@ -72,7 +66,7 @@ namespace Salamander
                     // cropped bitmap converted to image
                     Image<Bgr, Byte> croppedImg = new Image<Bgr, Byte>(croppedBitmap);
 
-                    // image displayed: test
+                    // display image for testing
                     CvInvoke.Imshow("Cropped Face Image", croppedImg);
 
                     // generates unique name for the cropped face image
@@ -85,17 +79,9 @@ namespace Salamander
                     croppedImg.Save(uniqueImgPath);
                 }
 
-                foreach (Rectangle eye in eyes)
-                    CvInvoke.Rectangle(image, eye, new Bgr(Color.AntiqueWhite).MCvScalar, 3);
-
-                //display the image 
+                //display image for testing
                 using (InputArray iaImage = image.GetInputArray())
-                    ImageViewer.Show(image, String.Format(
-                       "Sejas, acu un mutes atpazīšana {0} milisekundēs: {1}s",
-                       (iaImage.Kind == InputArray.Type.CudaGpuMat && CudaInvoke.HasCuda) ? "CUDA" :
-                       (iaImage.IsUMat && CvInvoke.UseOpenCL) ? "OpenCL"
-                       : "CPU",
-                       detectionTime));
+                    ImageViewer.Show(image, String.Format("Recognized Original"));
             }
         }
 
