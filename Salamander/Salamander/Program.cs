@@ -80,7 +80,9 @@ namespace Salamander
                     Image<Bgr, Byte> myImage = new Image<Bgr, Byte>(CroppedImage);
                     // image displayed
                     CvInvoke.Imshow("picture", myImage);
-                    myImage.Save(@"testImages/pic.bmp");
+                    var myUniqueFileName = string.Format("/{0}.bmp", Guid.NewGuid());
+                    string namesy = folder + myUniqueFileName;
+                    myImage.Save(namesy);
                     
                     
                 }
