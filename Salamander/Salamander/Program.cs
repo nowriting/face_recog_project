@@ -73,10 +73,16 @@ namespace Salamander
                     Bitmap bmpImg = image.Bitmap;
                     // a call to cropImage function, input: source and rectangle
                     Bitmap CroppedImage = CropImage(bmpImg, face);
+                    // save cropped image
+                    //Bitmap newbie = (Bitmap)CroppedImage.Clone();
+                    //newbie.Save(folder, System.Drawing.Imaging.ImageFormat.Bmp);
                     // cropped bitmap converted to image
                     Image<Bgr, Byte> myImage = new Image<Bgr, Byte>(CroppedImage);
                     // image displayed
                     CvInvoke.Imshow("picture", myImage);
+                    myImage.Save(@"testImages/pic.bmp");
+                    
+                    
                 }
 
                 foreach (Rectangle eye in eyes)
@@ -104,6 +110,7 @@ namespace Salamander
             // Draw the given area (section) of the source image
             // at location 0,0 on the empty bitmap (bmp)
             g.DrawImage(source, 0, 0, section, GraphicsUnit.Pixel);
+            
 
             return bmp;
         }
