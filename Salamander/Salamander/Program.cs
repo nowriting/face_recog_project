@@ -55,10 +55,15 @@ namespace Salamander
               out detectionTime);
 
             foreach (Rectangle face in faces) {
+                // the recangle drawn in the found face
                 CvInvoke.Rectangle(image, face, new Bgr(Color.Black).MCvScalar, 3);
+                // source image converted to bitmap
                 Bitmap bmpImg = image.Bitmap;
+                // a call to cropImage function, input: source and rectangle
                 Bitmap CroppedImage = CropImage(bmpImg, face);
+                // cropped bitmap converted to image
                 Image<Bgr, Byte> myImage = new Image<Bgr, Byte>(CroppedImage);
+                // image displayed
                 CvInvoke.Imshow("picture", myImage);
             }
                 
