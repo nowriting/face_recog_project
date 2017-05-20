@@ -58,7 +58,10 @@ namespace Salamander
 
         private void cmd_capture_Click(object sender, EventArgs e)
         {
-            picbox_preview2.Image = (Bitmap)picbox_preview1.Image.Clone();
+            if (picbox_preview1.Image != null)
+            {
+                picbox_preview2.Image = (Bitmap)picbox_preview1.Image.Clone();
+            }
         }
 
         private void cmd_save_Click(object sender, EventArgs e)
