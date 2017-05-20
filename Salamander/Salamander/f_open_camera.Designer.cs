@@ -43,21 +43,23 @@
             // 
             // cmd_startCapture
             // 
-            this.cmd_startCapture.Location = new System.Drawing.Point(21, 12);
+            this.cmd_startCapture.Location = new System.Drawing.Point(38, 12);
             this.cmd_startCapture.Name = "cmd_startCapture";
-            this.cmd_startCapture.Size = new System.Drawing.Size(75, 23);
+            this.cmd_startCapture.Size = new System.Drawing.Size(101, 23);
             this.cmd_startCapture.TabIndex = 0;
-            this.cmd_startCapture.Text = "Start";
+            this.cmd_startCapture.Text = "Ieslēgt kameru";
             this.cmd_startCapture.UseVisualStyleBackColor = true;
             this.cmd_startCapture.Click += new System.EventHandler(this.cmd_startCapture_Click);
             // 
             // list_selectCamera
             // 
             this.list_selectCamera.FormattingEnabled = true;
-            this.list_selectCamera.Location = new System.Drawing.Point(114, 12);
+            this.list_selectCamera.Location = new System.Drawing.Point(156, 12);
             this.list_selectCamera.Name = "list_selectCamera";
-            this.list_selectCamera.Size = new System.Drawing.Size(121, 21);
+            this.list_selectCamera.Size = new System.Drawing.Size(161, 21);
             this.list_selectCamera.TabIndex = 1;
+            this.list_selectCamera.Text = "Izvēlēties kameru";
+            this.list_selectCamera.SelectedIndexChanged += new System.EventHandler(this.list_selectCamera_SelectedIndexChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -97,19 +99,19 @@
             // 
             this.cmd_capture.Location = new System.Drawing.Point(323, 12);
             this.cmd_capture.Name = "cmd_capture";
-            this.cmd_capture.Size = new System.Drawing.Size(75, 23);
+            this.cmd_capture.Size = new System.Drawing.Size(118, 23);
             this.cmd_capture.TabIndex = 3;
-            this.cmd_capture.Text = "Capture";
+            this.cmd_capture.Text = "Knipsēt";
             this.cmd_capture.UseVisualStyleBackColor = true;
             this.cmd_capture.Click += new System.EventHandler(this.cmd_capture_Click);
             // 
             // cmd_save
             // 
-            this.cmd_save.Location = new System.Drawing.Point(439, 12);
+            this.cmd_save.Location = new System.Drawing.Point(485, 12);
             this.cmd_save.Name = "cmd_save";
-            this.cmd_save.Size = new System.Drawing.Size(75, 23);
+            this.cmd_save.Size = new System.Drawing.Size(118, 23);
             this.cmd_save.TabIndex = 4;
-            this.cmd_save.Text = "Save";
+            this.cmd_save.Text = "Saglabāt attēlu";
             this.cmd_save.UseVisualStyleBackColor = true;
             this.cmd_save.Click += new System.EventHandler(this.cmd_save_Click);
             // 

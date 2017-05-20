@@ -71,6 +71,11 @@ namespace Salamander
                 picbox_preview2.Image.Save(browsefiles.FileName);
             }
         }
+
+        private void list_selectCamera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

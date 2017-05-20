@@ -50,7 +50,7 @@
             this.cmd_open.Name = "cmd_open";
             this.cmd_open.Size = new System.Drawing.Size(200, 50);
             this.cmd_open.TabIndex = 1;
-            this.cmd_open.Text = "Open";
+            this.cmd_open.Text = "Atvērt";
             this.cmd_open.UseVisualStyleBackColor = true;
             this.cmd_open.Click += new System.EventHandler(this.cmd_open_Click);
             // 
@@ -60,7 +60,7 @@
             this.cmd_save.Name = "cmd_save";
             this.cmd_save.Size = new System.Drawing.Size(200, 50);
             this.cmd_save.TabIndex = 2;
-            this.cmd_save.Text = "Save";
+            this.cmd_save.Text = "Saglabāt";
             this.cmd_save.UseVisualStyleBackColor = true;
             this.cmd_save.Click += new System.EventHandler(this.cmd_save_Click);
             // 

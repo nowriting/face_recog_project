@@ -142,6 +142,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="f_main.resx">
+      <DependentUpon>f_main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="f_open_resave.resx">
       <DependentUpon>f_open_resave.cs</DependentUpon>
     </EmbeddedResource>
