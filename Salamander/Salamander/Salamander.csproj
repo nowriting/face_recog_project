@@ -154,6 +154,12 @@
     <EmbeddedResource Include="f_open_camera.resx">
       <DependentUpon>f_open_camera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="f_results.resx">
+      <DependentUpon>f_results.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_settings.resx">
+      <DependentUpon>f_settings.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

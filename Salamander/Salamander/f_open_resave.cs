@@ -41,5 +41,12 @@ namespace Salamander
                 Pic.Save(browsefiles.FileName);
             }
         }
+
+        private void cmd_back_Click(object sender, EventArgs e)
+        {
+            f_main openWin = new f_main();
+            openWin.Show();
+            this.Close();
+        }
     }
 }

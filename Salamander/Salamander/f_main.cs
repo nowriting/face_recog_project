@@ -46,5 +46,10 @@ namespace Salamander
             openWin.Show();
             this.Hide();
         }
+
+        private void cmd_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
