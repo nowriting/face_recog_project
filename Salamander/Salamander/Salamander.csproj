@@ -142,6 +142,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResizeGeneratedFaces.cs" />
     <EmbeddedResource Include="f_main.resx">
       <DependentUpon>f_main.cs</DependentUpon>
     </EmbeddedResource>

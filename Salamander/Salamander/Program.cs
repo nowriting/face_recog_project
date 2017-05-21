@@ -25,7 +25,9 @@ namespace Salamander
             // Application.Run(new f_open_resave());
             // Application.Run(new f_open_camera());
             // Application.Run(new f_face_detect());
-             Run();
+            Run();
+            ResizeGeneratedFaces.Test();
+            
         }
 
         static void Run()
@@ -37,7 +39,7 @@ namespace Salamander
             string folderImgSource = @"testImages/SourceImg";
             string folderImgFaces = @"testImages/GeneratedFaces";
 
-            //Read all the JPG files in the source image folder
+            //Read all files in the source image folder
             var sourceImgFiles = Directory.GetFiles(folderImgSource, "*.*", SearchOption.AllDirectories);
             List<string> imgFiles = new List<string>();
 
