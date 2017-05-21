@@ -25,7 +25,7 @@ namespace Salamander
             // Application.Run(new f_open_resave());
             // Application.Run(new f_open_camera());
             // Application.Run(new f_face_detect());
-            // Run();
+            Run();
             ProcessGeneratedFaces.GetImg();
             
         }
