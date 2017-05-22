@@ -75,6 +75,7 @@ namespace Salamander
             Mat smoothedImg = new Mat();
             Mat sobelImg = new Mat();
             Mat cannyImg = new Mat();
+            Mat eigenImg = new Mat();
             int xorder = 0;
             int yorder = 1;
 
@@ -127,12 +128,19 @@ namespace Salamander
                 number = number + 1;
 
                 // perform Canny edge detection on the img
-                 CvInvoke.Canny(smoothedImg, cannyImg, 100, 60);
+                CvInvoke.Canny(smoothedImg, cannyImg, 100, 60);
                 imgNumber = number.ToString();
                 finalFileName = folderProcessedImgFaces + imgNumber + imgExtension;
                 cannyImg.Save(finalFileName);
                 number = number + 1;
 
+                // perform Canny edge detection on the img
+                CvInvoke.CornerHarris(smoothedImg, eigenImg, 3,3,0.04,BorderType.Default);
+                imgNumber = number.ToString();
+                finalFileName = folderProcessedImgFaces + imgNumber + imgExtension;
+                eigenImg.Save(finalFileName);
+                number = number + 1;
+                
             }
         }
     }
