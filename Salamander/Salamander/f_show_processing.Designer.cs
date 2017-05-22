@@ -1,6 +1,6 @@
 ﻿namespace Salamander
 {
-    partial class f_read_resize_imgs
+    partial class f_show_processing
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // f_read_resize_imgs
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 349);
-            this.Name = "f_read_resize_imgs";
-            this.Text = "f_read_resize_imgs";
-            this.ResumeLayout(false);
-
+            this.Text = "f_show_processing";
         }
 
         #endregion

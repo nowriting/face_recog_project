@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Salamander
 {
-    public partial class f_read_resize_imgs : Form
+    public partial class f_show_processing : Form
     {
-        public f_read_resize_imgs()
+        public f_show_processing()
         {
             InitializeComponent();
         }

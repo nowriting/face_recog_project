@@ -116,12 +116,6 @@
     <Compile Include="f_open_resave.Designer.cs">
       <DependentUpon>f_open_resave.cs</DependentUpon>
     </Compile>
-    <Compile Include="f_read_resize_imgs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="f_read_resize_imgs.Designer.cs">
-      <DependentUpon>f_read_resize_imgs.cs</DependentUpon>
-    </Compile>
     <Compile Include="f_open_camera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +134,12 @@
     <Compile Include="f_settings.Designer.cs">
       <DependentUpon>f_settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="f_show_processing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_show_processing.Designer.cs">
+      <DependentUpon>f_show_processing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProcessGeneratedFaces.cs" />
@@ -148,9 +148,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="f_open_resave.resx">
       <DependentUpon>f_open_resave.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="f_read_resize_imgs.resx">
-      <DependentUpon>f_read_resize_imgs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_open_camera.resx">
       <DependentUpon>f_open_camera.cs</DependentUpon>
