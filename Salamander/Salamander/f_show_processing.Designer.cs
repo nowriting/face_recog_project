@@ -31,36 +31,36 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_show_processing));
             this.cmd_back = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.picBox1 = new System.Windows.Forms.PictureBox();
+            this.picBox5 = new System.Windows.Forms.PictureBox();
+            this.lbl_picBox1 = new System.Windows.Forms.Label();
+            this.lbl_picBox5 = new System.Windows.Forms.Label();
+            this.lbl_picBox4 = new System.Windows.Forms.Label();
+            this.picBox8 = new System.Windows.Forms.PictureBox();
+            this.lbl_picBox8 = new System.Windows.Forms.Label();
+            this.picBox3 = new System.Windows.Forms.PictureBox();
+            this.lbl_picBox3 = new System.Windows.Forms.Label();
+            this.picBox7 = new System.Windows.Forms.PictureBox();
+            this.lbl_picBox7 = new System.Windows.Forms.Label();
+            this.picBox2 = new System.Windows.Forms.PictureBox();
+            this.lbl_picBox2 = new System.Windows.Forms.Label();
+            this.picBox6 = new System.Windows.Forms.PictureBox();
+            this.lbl_picBox6 = new System.Windows.Forms.Label();
+            this.picBox4 = new System.Windows.Forms.PictureBox();
             this.cmd_goToANN = new System.Windows.Forms.Button();
             this.cmd_processImage = new System.Windows.Forms.Button();
             this.txtBox_imgLocation = new System.Windows.Forms.TextBox();
             this.cmd_chooseImage = new System.Windows.Forms.Button();
-            this.picBox1 = new System.Windows.Forms.PictureBox();
-            this.picBox2 = new System.Windows.Forms.PictureBox();
-            this.picBox3 = new System.Windows.Forms.PictureBox();
-            this.picBox4 = new System.Windows.Forms.PictureBox();
-            this.picBox5 = new System.Windows.Forms.PictureBox();
-            this.picBox6 = new System.Windows.Forms.PictureBox();
-            this.picBox7 = new System.Windows.Forms.PictureBox();
-            this.picBox8 = new System.Windows.Forms.PictureBox();
-            this.lbl_picBox1 = new System.Windows.Forms.Label();
-            this.lbl_picBox2 = new System.Windows.Forms.Label();
-            this.lbl_picBox3 = new System.Windows.Forms.Label();
-            this.lbl_picBox4 = new System.Windows.Forms.Label();
-            this.lbl_picBox5 = new System.Windows.Forms.Label();
-            this.lbl_picBox6 = new System.Windows.Forms.Label();
-            this.lbl_picBox7 = new System.Windows.Forms.Label();
-            this.lbl_picBox8 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // cmd_back
@@ -81,36 +81,200 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel1.Controls.Add(this.picBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.picBox3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.picBox4, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.picBox5, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.picBox6, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.picBox7, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.picBox8, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.lbl_picBox1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.picBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox3, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox4, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbl_picBox5, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox6, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox7, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox8, 3, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 96);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox4, 6, 1);
+            this.tableLayoutPanel1.Controls.Add(this.picBox8, 6, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox8, 6, 3);
+            this.tableLayoutPanel1.Controls.Add(this.picBox3, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox3, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.picBox7, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox7, 4, 3);
+            this.tableLayoutPanel1.Controls.Add(this.picBox2, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.picBox6, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_picBox6, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.picBox4, 6, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(100, 113);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(660, 303);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(474, 264);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // picBox1
+            // 
+            this.picBox1.Location = new System.Drawing.Point(3, 3);
+            this.picBox1.Name = "picBox1";
+            this.picBox1.Size = new System.Drawing.Size(84, 84);
+            this.picBox1.TabIndex = 0;
+            this.picBox1.TabStop = false;
+            // 
+            // picBox5
+            // 
+            this.picBox5.Location = new System.Drawing.Point(3, 143);
+            this.picBox5.Name = "picBox5";
+            this.picBox5.Size = new System.Drawing.Size(84, 84);
+            this.picBox5.TabIndex = 4;
+            this.picBox5.TabStop = false;
+            // 
+            // lbl_picBox1
+            // 
+            this.lbl_picBox1.AutoSize = true;
+            this.lbl_picBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_picBox1.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_picBox1.Location = new System.Drawing.Point(3, 90);
+            this.lbl_picBox1.Name = "lbl_picBox1";
+            this.lbl_picBox1.Size = new System.Drawing.Size(47, 16);
+            this.lbl_picBox1.TabIndex = 8;
+            this.lbl_picBox1.Text = "80x80";
+            this.lbl_picBox1.Visible = false;
+            // 
+            // lbl_picBox5
+            // 
+            this.lbl_picBox5.AutoSize = true;
+            this.lbl_picBox5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_picBox5.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_picBox5.Location = new System.Drawing.Point(3, 230);
+            this.lbl_picBox5.Name = "lbl_picBox5";
+            this.lbl_picBox5.Size = new System.Drawing.Size(91, 16);
+            this.lbl_picBox5.TabIndex = 12;
+            this.lbl_picBox5.Text = "Virs-paraugs";
+            this.lbl_picBox5.Visible = false;
+            // 
+            // lbl_picBox4
+            // 
+            this.lbl_picBox4.AutoSize = true;
+            this.lbl_picBox4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_picBox4.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_picBox4.Location = new System.Drawing.Point(363, 90);
+            this.lbl_picBox4.Name = "lbl_picBox4";
+            this.lbl_picBox4.Size = new System.Drawing.Size(106, 16);
+            this.lbl_picBox4.TabIndex = 11;
+            this.lbl_picBox4.Text = "Apakš-paraugs";
+            this.lbl_picBox4.Visible = false;
+            // 
+            // picBox8
+            // 
+            this.picBox8.Location = new System.Drawing.Point(363, 143);
+            this.picBox8.Name = "picBox8";
+            this.picBox8.Size = new System.Drawing.Size(108, 84);
+            this.picBox8.TabIndex = 7;
+            this.picBox8.TabStop = false;
+            // 
+            // lbl_picBox8
+            // 
+            this.lbl_picBox8.AutoSize = true;
+            this.lbl_picBox8.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_picBox8.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_picBox8.Location = new System.Drawing.Point(363, 230);
+            this.lbl_picBox8.Name = "lbl_picBox8";
+            this.lbl_picBox8.Size = new System.Drawing.Size(84, 32);
+            this.lbl_picBox8.TabIndex = 15;
+            this.lbl_picBox8.Text = "Harris corner-det.";
+            this.lbl_picBox8.Visible = false;
+            // 
+            // picBox3
+            // 
+            this.picBox3.Location = new System.Drawing.Point(243, 3);
+            this.picBox3.Name = "picBox3";
+            this.picBox3.Size = new System.Drawing.Size(84, 84);
+            this.picBox3.TabIndex = 2;
+            this.picBox3.TabStop = false;
+            // 
+            // lbl_picBox3
+            // 
+            this.lbl_picBox3.AutoSize = true;
+            this.lbl_picBox3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_picBox3.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_picBox3.Location = new System.Drawing.Point(243, 90);
+            this.lbl_picBox3.MinimumSize = new System.Drawing.Size(159, 0);
+            this.lbl_picBox3.Name = "lbl_picBox3";
+            this.lbl_picBox3.Size = new System.Drawing.Size(159, 16);
+            this.lbl_picBox3.TabIndex = 10;
+            this.lbl_picBox3.Text = "Histogramma";
+            this.lbl_picBox3.Visible = false;
+            // 
+            // picBox7
+            // 
+            this.picBox7.Location = new System.Drawing.Point(243, 143);
+            this.picBox7.Name = "picBox7";
+            this.picBox7.Size = new System.Drawing.Size(84, 84);
+            this.picBox7.TabIndex = 6;
+            this.picBox7.TabStop = false;
+            // 
+            // lbl_picBox7
+            // 
+            this.lbl_picBox7.AutoSize = true;
+            this.lbl_picBox7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_picBox7.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_picBox7.Location = new System.Drawing.Point(243, 230);
+            this.lbl_picBox7.Name = "lbl_picBox7";
+            this.lbl_picBox7.Size = new System.Drawing.Size(88, 16);
+            this.lbl_picBox7.TabIndex = 14;
+            this.lbl_picBox7.Text = "Canny-edge";
+            this.lbl_picBox7.Visible = false;
+            // 
+            // picBox2
+            // 
+            this.picBox2.Location = new System.Drawing.Point(123, 3);
+            this.picBox2.Name = "picBox2";
+            this.picBox2.Size = new System.Drawing.Size(84, 84);
+            this.picBox2.TabIndex = 1;
+            this.picBox2.TabStop = false;
+            // 
+            // lbl_picBox2
+            // 
+            this.lbl_picBox2.AutoSize = true;
+            this.lbl_picBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_picBox2.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_picBox2.Location = new System.Drawing.Point(123, 90);
+            this.lbl_picBox2.Name = "lbl_picBox2";
+            this.lbl_picBox2.Size = new System.Drawing.Size(71, 32);
+            this.lbl_picBox2.TabIndex = 9;
+            this.lbl_picBox2.Text = "RGB par melnbaltu";
+            this.lbl_picBox2.Visible = false;
+            // 
+            // picBox6
+            // 
+            this.picBox6.Location = new System.Drawing.Point(123, 143);
+            this.picBox6.Name = "picBox6";
+            this.picBox6.Size = new System.Drawing.Size(84, 84);
+            this.picBox6.TabIndex = 5;
+            this.picBox6.TabStop = false;
+            // 
+            // lbl_picBox6
+            // 
+            this.lbl_picBox6.AutoSize = true;
+            this.lbl_picBox6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_picBox6.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_picBox6.Location = new System.Drawing.Point(123, 230);
+            this.lbl_picBox6.Name = "lbl_picBox6";
+            this.lbl_picBox6.Size = new System.Drawing.Size(44, 16);
+            this.lbl_picBox6.TabIndex = 13;
+            this.lbl_picBox6.Text = "Sobel";
+            this.lbl_picBox6.Visible = false;
+            // 
+            // picBox4
+            // 
+            this.picBox4.Location = new System.Drawing.Point(363, 3);
+            this.picBox4.Name = "picBox4";
+            this.picBox4.Size = new System.Drawing.Size(90, 84);
+            this.picBox4.TabIndex = 3;
+            this.picBox4.TabStop = false;
             // 
             // cmd_goToANN
             // 
@@ -142,6 +306,7 @@
             this.cmd_processImage.TabIndex = 3;
             this.cmd_processImage.Text = "Apstrādāt attēlu";
             this.cmd_processImage.UseVisualStyleBackColor = false;
+            this.cmd_processImage.Click += new System.EventHandler(this.cmd_processImage_Click);
             // 
             // txtBox_imgLocation
             // 
@@ -166,159 +331,6 @@
             this.cmd_chooseImage.UseVisualStyleBackColor = false;
             this.cmd_chooseImage.Click += new System.EventHandler(this.cmd_chooseImage_Click);
             // 
-            // picBox1
-            // 
-            this.picBox1.Location = new System.Drawing.Point(3, 3);
-            this.picBox1.Name = "picBox1";
-            this.picBox1.Size = new System.Drawing.Size(159, 121);
-            this.picBox1.TabIndex = 0;
-            this.picBox1.TabStop = false;
-            // 
-            // picBox2
-            // 
-            this.picBox2.Location = new System.Drawing.Point(168, 3);
-            this.picBox2.Name = "picBox2";
-            this.picBox2.Size = new System.Drawing.Size(159, 121);
-            this.picBox2.TabIndex = 1;
-            this.picBox2.TabStop = false;
-            // 
-            // picBox3
-            // 
-            this.picBox3.Location = new System.Drawing.Point(333, 3);
-            this.picBox3.Name = "picBox3";
-            this.picBox3.Size = new System.Drawing.Size(159, 121);
-            this.picBox3.TabIndex = 2;
-            this.picBox3.TabStop = false;
-            // 
-            // picBox4
-            // 
-            this.picBox4.Location = new System.Drawing.Point(498, 3);
-            this.picBox4.Name = "picBox4";
-            this.picBox4.Size = new System.Drawing.Size(159, 121);
-            this.picBox4.TabIndex = 3;
-            this.picBox4.TabStop = false;
-            // 
-            // picBox5
-            // 
-            this.picBox5.Location = new System.Drawing.Point(3, 154);
-            this.picBox5.Name = "picBox5";
-            this.picBox5.Size = new System.Drawing.Size(159, 121);
-            this.picBox5.TabIndex = 4;
-            this.picBox5.TabStop = false;
-            // 
-            // picBox6
-            // 
-            this.picBox6.Location = new System.Drawing.Point(168, 154);
-            this.picBox6.Name = "picBox6";
-            this.picBox6.Size = new System.Drawing.Size(159, 121);
-            this.picBox6.TabIndex = 5;
-            this.picBox6.TabStop = false;
-            // 
-            // picBox7
-            // 
-            this.picBox7.Location = new System.Drawing.Point(333, 154);
-            this.picBox7.Name = "picBox7";
-            this.picBox7.Size = new System.Drawing.Size(159, 121);
-            this.picBox7.TabIndex = 6;
-            this.picBox7.TabStop = false;
-            // 
-            // picBox8
-            // 
-            this.picBox8.Location = new System.Drawing.Point(498, 154);
-            this.picBox8.Name = "picBox8";
-            this.picBox8.Size = new System.Drawing.Size(159, 121);
-            this.picBox8.TabIndex = 7;
-            this.picBox8.TabStop = false;
-            // 
-            // lbl_picBox1
-            // 
-            this.lbl_picBox1.AutoSize = true;
-            this.lbl_picBox1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_picBox1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_picBox1.Location = new System.Drawing.Point(3, 127);
-            this.lbl_picBox1.Name = "lbl_picBox1";
-            this.lbl_picBox1.Size = new System.Drawing.Size(47, 16);
-            this.lbl_picBox1.TabIndex = 8;
-            this.lbl_picBox1.Text = "80x80";
-            // 
-            // lbl_picBox2
-            // 
-            this.lbl_picBox2.AutoSize = true;
-            this.lbl_picBox2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_picBox2.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_picBox2.Location = new System.Drawing.Point(168, 127);
-            this.lbl_picBox2.Name = "lbl_picBox2";
-            this.lbl_picBox2.Size = new System.Drawing.Size(127, 16);
-            this.lbl_picBox2.TabIndex = 9;
-            this.lbl_picBox2.Text = "RGB par melnbaltu";
-            // 
-            // lbl_picBox3
-            // 
-            this.lbl_picBox3.AutoSize = true;
-            this.lbl_picBox3.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_picBox3.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_picBox3.Location = new System.Drawing.Point(333, 127);
-            this.lbl_picBox3.MinimumSize = new System.Drawing.Size(159, 0);
-            this.lbl_picBox3.Name = "lbl_picBox3";
-            this.lbl_picBox3.Size = new System.Drawing.Size(159, 16);
-            this.lbl_picBox3.TabIndex = 10;
-            this.lbl_picBox3.Text = "Norm. histogramma";
-            // 
-            // lbl_picBox4
-            // 
-            this.lbl_picBox4.AutoSize = true;
-            this.lbl_picBox4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_picBox4.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_picBox4.Location = new System.Drawing.Point(498, 127);
-            this.lbl_picBox4.Name = "lbl_picBox4";
-            this.lbl_picBox4.Size = new System.Drawing.Size(106, 16);
-            this.lbl_picBox4.TabIndex = 11;
-            this.lbl_picBox4.Text = "Apakš-paraugs";
-            // 
-            // lbl_picBox5
-            // 
-            this.lbl_picBox5.AutoSize = true;
-            this.lbl_picBox5.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_picBox5.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_picBox5.Location = new System.Drawing.Point(3, 278);
-            this.lbl_picBox5.Name = "lbl_picBox5";
-            this.lbl_picBox5.Size = new System.Drawing.Size(91, 16);
-            this.lbl_picBox5.TabIndex = 12;
-            this.lbl_picBox5.Text = "Virs-paraugs";
-            // 
-            // lbl_picBox6
-            // 
-            this.lbl_picBox6.AutoSize = true;
-            this.lbl_picBox6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_picBox6.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_picBox6.Location = new System.Drawing.Point(168, 278);
-            this.lbl_picBox6.Name = "lbl_picBox6";
-            this.lbl_picBox6.Size = new System.Drawing.Size(44, 16);
-            this.lbl_picBox6.TabIndex = 13;
-            this.lbl_picBox6.Text = "Sobel";
-            // 
-            // lbl_picBox7
-            // 
-            this.lbl_picBox7.AutoSize = true;
-            this.lbl_picBox7.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_picBox7.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_picBox7.Location = new System.Drawing.Point(333, 278);
-            this.lbl_picBox7.Name = "lbl_picBox7";
-            this.lbl_picBox7.Size = new System.Drawing.Size(88, 16);
-            this.lbl_picBox7.TabIndex = 14;
-            this.lbl_picBox7.Text = "Canny-edge";
-            // 
-            // lbl_picBox8
-            // 
-            this.lbl_picBox8.AutoSize = true;
-            this.lbl_picBox8.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_picBox8.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_picBox8.Location = new System.Drawing.Point(498, 278);
-            this.lbl_picBox8.Name = "lbl_picBox8";
-            this.lbl_picBox8.Size = new System.Drawing.Size(126, 16);
-            this.lbl_picBox8.TabIndex = 15;
-            this.lbl_picBox8.Text = "Harris corner-det.";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -342,13 +354,13 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
