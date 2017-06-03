@@ -158,6 +158,9 @@
     <EmbeddedResource Include="f_settings.resx">
       <DependentUpon>f_settings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="f_show_processing.resx">
+      <DependentUpon>f_show_processing.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

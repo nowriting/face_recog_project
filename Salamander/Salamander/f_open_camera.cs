@@ -23,6 +23,7 @@ namespace Salamander
         private FilterInfoCollection CaptureWebCam;
         private VideoCaptureDevice FinalFrame;
 
+        // choose available camera
         private void open_camera_Load(object sender, EventArgs e)
         {
             CaptureWebCam = new FilterInfoCollection(FilterCategory.VideoInputDevice);
@@ -35,6 +36,7 @@ namespace Salamander
             FinalFrame = new VideoCaptureDevice();
         }
 
+        // open camera, stream feed
         private void cmd_startCapture_Click(object sender, EventArgs e)
         {
             FinalFrame = new VideoCaptureDevice(CaptureWebCam[list_selectCamera.SelectedIndex].MonikerString);
@@ -42,6 +44,7 @@ namespace Salamander
             FinalFrame.Start();
         }
 
+        // capture snapshot
         private void FinalFrame_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
             picbox_preview1.Image = (Bitmap)eventArgs.Frame.Clone();
@@ -64,6 +67,7 @@ namespace Salamander
             }
         }
 
+        // save captures snapshot
         private void cmd_save_Click(object sender, EventArgs e)
         {
             SaveFileDialog browsefiles = new SaveFileDialog();
