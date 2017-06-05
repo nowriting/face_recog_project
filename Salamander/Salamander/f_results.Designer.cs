@@ -28,26 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(f_results));
             this.cmd_back = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBox_info = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.picBox_input = new System.Windows.Forms.PictureBox();
+            this.picBox_output1 = new System.Windows.Forms.PictureBox();
+            this.picBox_output2 = new System.Windows.Forms.PictureBox();
             this.lbl_error = new System.Windows.Forms.Label();
             this.lbl_iteration = new System.Windows.Forms.Label();
             this.lbl_time = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.cmd_loadNet = new System.Windows.Forms.Button();
+            this.cmd_saveNet = new System.Windows.Forms.Button();
+            this.cmd_trainNet = new System.Windows.Forms.Button();
+            this.cmd_stopTraining = new System.Windows.Forms.Button();
+            this.cmd_recognize = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_input)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_output1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_output2)).BeginInit();
             this.SuspendLayout();
             // 
             // cmd_back
@@ -64,23 +68,23 @@
             this.cmd_back.UseVisualStyleBackColor = false;
             this.cmd_back.Click += new System.EventHandler(this.cmd_back_Click);
             // 
-            // textBox1
+            // txtBox_info
             // 
-            this.textBox1.Location = new System.Drawing.Point(41, 175);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 128);
-            this.textBox1.TabIndex = 1;
+            this.txtBox_info.Location = new System.Drawing.Point(41, 175);
+            this.txtBox_info.Multiline = true;
+            this.txtBox_info.Name = "txtBox_info";
+            this.txtBox_info.Size = new System.Drawing.Size(275, 128);
+            this.txtBox_info.TabIndex = 1;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox3, 2, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.tableLayoutPanel1.Controls.Add(this.picBox_input, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.picBox_output1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.picBox_output2, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(44, 26);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -89,29 +93,29 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(275, 122);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // pictureBox1
+            // picBox_input
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 84);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picBox_input.Location = new System.Drawing.Point(3, 3);
+            this.picBox_input.Name = "picBox_input";
+            this.picBox_input.Size = new System.Drawing.Size(84, 84);
+            this.picBox_input.TabIndex = 0;
+            this.picBox_input.TabStop = false;
             // 
-            // pictureBox2
+            // picBox_output1
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(93, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(84, 84);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.picBox_output1.Location = new System.Drawing.Point(93, 3);
+            this.picBox_output1.Name = "picBox_output1";
+            this.picBox_output1.Size = new System.Drawing.Size(84, 84);
+            this.picBox_output1.TabIndex = 1;
+            this.picBox_output1.TabStop = false;
             // 
-            // pictureBox3
+            // picBox_output2
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(183, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(89, 84);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.picBox_output2.Location = new System.Drawing.Point(183, 3);
+            this.picBox_output2.Name = "picBox_output2";
+            this.picBox_output2.Size = new System.Drawing.Size(89, 84);
+            this.picBox_output2.TabIndex = 2;
+            this.picBox_output2.TabStop = false;
             // 
             // lbl_error
             // 
@@ -143,73 +147,78 @@
             this.lbl_time.TabIndex = 5;
             this.lbl_time.Text = "Izpildes laiks:";
             // 
-            // button1
+            // cmd_loadNet
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button1.Location = new System.Drawing.Point(27, 340);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 45);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Ielādēt apmācītu tīklu";
-            this.button1.UseVisualStyleBackColor = false;
+            this.cmd_loadNet.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmd_loadNet.FlatAppearance.BorderSize = 0;
+            this.cmd_loadNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_loadNet.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_loadNet.ForeColor = System.Drawing.Color.AliceBlue;
+            this.cmd_loadNet.Location = new System.Drawing.Point(27, 340);
+            this.cmd_loadNet.Name = "cmd_loadNet";
+            this.cmd_loadNet.Size = new System.Drawing.Size(120, 45);
+            this.cmd_loadNet.TabIndex = 6;
+            this.cmd_loadNet.Text = "Ielādēt apmācītu tīklu";
+            this.cmd_loadNet.UseVisualStyleBackColor = false;
+            this.cmd_loadNet.Click += new System.EventHandler(this.cmd_loadNet_Click);
             // 
-            // button2
+            // cmd_saveNet
             // 
-            this.button2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button2.Location = new System.Drawing.Point(153, 340);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 45);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Saglabāt tīklu";
-            this.button2.UseVisualStyleBackColor = false;
+            this.cmd_saveNet.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmd_saveNet.FlatAppearance.BorderSize = 0;
+            this.cmd_saveNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_saveNet.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_saveNet.ForeColor = System.Drawing.Color.AliceBlue;
+            this.cmd_saveNet.Location = new System.Drawing.Point(153, 340);
+            this.cmd_saveNet.Name = "cmd_saveNet";
+            this.cmd_saveNet.Size = new System.Drawing.Size(120, 45);
+            this.cmd_saveNet.TabIndex = 7;
+            this.cmd_saveNet.Text = "Saglabāt tīklu";
+            this.cmd_saveNet.UseVisualStyleBackColor = false;
+            this.cmd_saveNet.Click += new System.EventHandler(this.cmd_saveNet_Click);
             // 
-            // button3
+            // cmd_trainNet
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button3.Location = new System.Drawing.Point(279, 340);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 45);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Trenēt";
-            this.button3.UseVisualStyleBackColor = false;
+            this.cmd_trainNet.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmd_trainNet.FlatAppearance.BorderSize = 0;
+            this.cmd_trainNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_trainNet.ForeColor = System.Drawing.Color.AliceBlue;
+            this.cmd_trainNet.Location = new System.Drawing.Point(279, 340);
+            this.cmd_trainNet.Name = "cmd_trainNet";
+            this.cmd_trainNet.Size = new System.Drawing.Size(120, 45);
+            this.cmd_trainNet.TabIndex = 8;
+            this.cmd_trainNet.Text = "Trenēt";
+            this.cmd_trainNet.UseVisualStyleBackColor = false;
+            this.cmd_trainNet.Click += new System.EventHandler(this.cmd_trainNet_Click);
             // 
-            // button4
+            // cmd_stopTraining
             // 
-            this.button4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button4.Location = new System.Drawing.Point(531, 340);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 45);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Pārtraukt trenēšanu";
-            this.button4.UseVisualStyleBackColor = false;
+            this.cmd_stopTraining.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmd_stopTraining.FlatAppearance.BorderSize = 0;
+            this.cmd_stopTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_stopTraining.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_stopTraining.ForeColor = System.Drawing.Color.AliceBlue;
+            this.cmd_stopTraining.Location = new System.Drawing.Point(531, 340);
+            this.cmd_stopTraining.Name = "cmd_stopTraining";
+            this.cmd_stopTraining.Size = new System.Drawing.Size(120, 45);
+            this.cmd_stopTraining.TabIndex = 9;
+            this.cmd_stopTraining.Text = "Pārtraukt trenēšanu";
+            this.cmd_stopTraining.UseVisualStyleBackColor = false;
+            this.cmd_stopTraining.Click += new System.EventHandler(this.cmd_stopTraining_Click);
             // 
-            // button5
+            // cmd_recognize
             // 
-            this.button5.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.AliceBlue;
-            this.button5.Location = new System.Drawing.Point(405, 340);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 45);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Atpazīt";
-            this.button5.UseVisualStyleBackColor = false;
+            this.cmd_recognize.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmd_recognize.FlatAppearance.BorderSize = 0;
+            this.cmd_recognize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_recognize.ForeColor = System.Drawing.Color.AliceBlue;
+            this.cmd_recognize.Location = new System.Drawing.Point(405, 340);
+            this.cmd_recognize.Name = "cmd_recognize";
+            this.cmd_recognize.Size = new System.Drawing.Size(120, 45);
+            this.cmd_recognize.TabIndex = 10;
+            this.cmd_recognize.Text = "Atpazīt";
+            this.cmd_recognize.UseVisualStyleBackColor = false;
+            this.cmd_recognize.Click += new System.EventHandler(this.cmd_recognize_Click);
             // 
             // label1
             // 
@@ -221,6 +230,10 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Apmācības statuss: ";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // f_results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -228,16 +241,16 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(684, 411);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmd_recognize);
+            this.Controls.Add(this.cmd_stopTraining);
+            this.Controls.Add(this.cmd_trainNet);
+            this.Controls.Add(this.cmd_saveNet);
+            this.Controls.Add(this.cmd_loadNet);
             this.Controls.Add(this.lbl_time);
             this.Controls.Add(this.lbl_iteration);
             this.Controls.Add(this.lbl_error);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBox_info);
             this.Controls.Add(this.cmd_back);
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -247,9 +260,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rezultāts";
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_input)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_output1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBox_output2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,19 +271,22 @@
         #endregion
 
         private System.Windows.Forms.Button cmd_back;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBox_info;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picBox_input;
+        private System.Windows.Forms.PictureBox picBox_output1;
+        private System.Windows.Forms.PictureBox picBox_output2;
         private System.Windows.Forms.Label lbl_error;
         private System.Windows.Forms.Label lbl_iteration;
         private System.Windows.Forms.Label lbl_time;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button cmd_loadNet;
+        private System.Windows.Forms.Button cmd_saveNet;
+        private System.Windows.Forms.Button cmd_trainNet;
+        private System.Windows.Forms.Button cmd_stopTraining;
+        private System.Windows.Forms.Button cmd_recognize;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
