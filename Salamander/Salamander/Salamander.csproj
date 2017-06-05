@@ -103,6 +103,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ANN_Library\BP1Layer.cs" />
+    <Compile Include="ANN_Library\BP2Layer.cs" />
+    <Compile Include="ANN_Library\BP3Layer.cs" />
+    <Compile Include="ANN_Library\BPBase.cs" />
     <Compile Include="DetectFace.cs" />
     <Compile Include="f_main.cs">
       <SubType>Form</SubType>
@@ -140,6 +144,8 @@
     <Compile Include="f_show_processing.Designer.cs">
       <DependentUpon>f_show_processing.cs</DependentUpon>
     </Compile>
+    <Compile Include="ANN_Library\IBackPropagation.cs" />
+    <Compile Include="ANN_Library\NeuralNetwork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProcessGeneratedFaces.cs" />
@@ -186,6 +192,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="background4.png" />
     <Content Include="haarcascade_eye.xml" />
     <Content Include="haarcascade_frontalface_default.xml" />
   </ItemGroup>

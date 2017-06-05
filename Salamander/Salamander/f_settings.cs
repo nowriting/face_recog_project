@@ -23,5 +23,19 @@ namespace Salamander
             openWin.Show();
             this.Close();
         }
+
+        private void cmd_imgPro_Click(object sender, EventArgs e)
+        {
+            f_show_processing openWin = new f_show_processing();
+            openWin.Show();
+            this.Close();
+        }
+
+        private void cmd_toRecog_Click(object sender, EventArgs e)
+        {
+            f_results openWin = new f_results();
+            openWin.Show();
+            this.Close();
+        }
     }
 }
