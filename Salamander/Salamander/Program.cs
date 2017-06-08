@@ -20,13 +20,13 @@ namespace Salamander
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            // Application.Run(new f_main());
+            Run();
+            ProcessGeneratedFaces.GetImg();
+            Application.Run(new f_main());
             // Application.Run(new f_open_resave());
             // Application.Run(new f_open_camera());
             // Application.Run(new f_face_detect());
-            // Run();
-            // ProcessGeneratedFaces.GetImg();
-            Application.Run(new f_show_processing());
+            //Application.Run(new f_show_processing());
             
         }
 
@@ -68,7 +68,7 @@ namespace Salamander
                     Image<Bgr, Byte> croppedImg = new Image<Bgr, Byte>(croppedBitmap);
 
                     // display image for testing
-                    CvInvoke.Imshow("Cropped Face Image", croppedImg);
+                    // CvInvoke.Imshow("Cropped Face Image", croppedImg);
 
                     // generates unique name for the cropped face image
                     var uniqueImgName = string.Format("/{0}.bmp", Guid.NewGuid());
@@ -81,8 +81,8 @@ namespace Salamander
                 }
 
                 //display image for testing
-                using (InputArray iaImage = image.GetInputArray())
-                    ImageViewer.Show(image, String.Format("Recognized Original"));
+                // using (InputArray iaImage = image.GetInputArray())
+                    // ImageViewer.Show(image, String.Format("Recognized Original"));
             }
         }
 

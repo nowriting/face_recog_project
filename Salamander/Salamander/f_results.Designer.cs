@@ -36,6 +36,8 @@
             this.picBox_input = new System.Windows.Forms.PictureBox();
             this.picBox_output1 = new System.Windows.Forms.PictureBox();
             this.picBox_output2 = new System.Windows.Forms.PictureBox();
+            this.lbl_match1 = new System.Windows.Forms.Label();
+            this.lbl_match2 = new System.Windows.Forms.Label();
             this.lbl_error = new System.Windows.Forms.Label();
             this.lbl_iteration = new System.Windows.Forms.Label();
             this.lbl_time = new System.Windows.Forms.Label();
@@ -44,10 +46,11 @@
             this.cmd_trainNet = new System.Windows.Forms.Button();
             this.cmd_stopTraining = new System.Windows.Forms.Button();
             this.cmd_recognize = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_status = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.cmd_chooseImg = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_input)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_output1)).BeginInit();
@@ -85,6 +88,8 @@
             this.tableLayoutPanel1.Controls.Add(this.picBox_input, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.picBox_output1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.picBox_output2, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_match1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lbl_match2, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(44, 26);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -92,6 +97,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(275, 122);
             this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // picBox_input
             // 
@@ -116,6 +122,26 @@
             this.picBox_output2.Size = new System.Drawing.Size(89, 84);
             this.picBox_output2.TabIndex = 2;
             this.picBox_output2.TabStop = false;
+            // 
+            // lbl_match1
+            // 
+            this.lbl_match1.AutoSize = true;
+            this.lbl_match1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_match1.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_match1.Location = new System.Drawing.Point(93, 90);
+            this.lbl_match1.Name = "lbl_match1";
+            this.lbl_match1.Size = new System.Drawing.Size(15, 15);
+            this.lbl_match1.TabIndex = 3;
+            this.lbl_match1.Text = "  ";
+            // 
+            // lbl_match2
+            // 
+            this.lbl_match2.AutoSize = true;
+            this.lbl_match2.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_match2.Location = new System.Drawing.Point(183, 90);
+            this.lbl_match2.Name = "lbl_match2";
+            this.lbl_match2.Size = new System.Drawing.Size(0, 20);
+            this.lbl_match2.TabIndex = 4;
             // 
             // lbl_error
             // 
@@ -220,19 +246,33 @@
             this.cmd_recognize.UseVisualStyleBackColor = false;
             this.cmd_recognize.Click += new System.EventHandler(this.cmd_recognize_Click);
             // 
-            // label1
+            // lbl_status
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(363, 280);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 20);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Apmācības statuss: ";
+            this.lbl_status.AutoSize = true;
+            this.lbl_status.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lbl_status.Location = new System.Drawing.Point(363, 280);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(177, 20);
+            this.lbl_status.TabIndex = 11;
+            this.lbl_status.Text = "Apmācības statuss: ";
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // cmd_chooseImg
+            // 
+            this.cmd_chooseImg.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmd_chooseImg.FlatAppearance.BorderSize = 0;
+            this.cmd_chooseImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_chooseImg.ForeColor = System.Drawing.Color.AliceBlue;
+            this.cmd_chooseImg.Location = new System.Drawing.Point(411, 89);
+            this.cmd_chooseImg.Name = "cmd_chooseImg";
+            this.cmd_chooseImg.Size = new System.Drawing.Size(240, 45);
+            this.cmd_chooseImg.TabIndex = 12;
+            this.cmd_chooseImg.Text = "Izvēlēties attēlu";
+            this.cmd_chooseImg.UseVisualStyleBackColor = false;
+            this.cmd_chooseImg.Click += new System.EventHandler(this.cmd_chooseImg_Click);
             // 
             // f_results
             // 
@@ -240,7 +280,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(684, 411);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmd_chooseImg);
+            this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.cmd_recognize);
             this.Controls.Add(this.cmd_stopTraining);
             this.Controls.Add(this.cmd_trainNet);
@@ -260,6 +301,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rezultāts";
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_input)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_output1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_output2)).EndInit();
@@ -284,9 +326,12 @@
         private System.Windows.Forms.Button cmd_trainNet;
         private System.Windows.Forms.Button cmd_stopTraining;
         private System.Windows.Forms.Button cmd_recognize;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_status;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button cmd_chooseImg;
+        private System.Windows.Forms.Label lbl_match1;
+        private System.Windows.Forms.Label lbl_match2;
     }
 }

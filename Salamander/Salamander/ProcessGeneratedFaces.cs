@@ -68,6 +68,7 @@ namespace Salamander
         {
             IImage image;
             string finalFileName;
+            string finalFileNameForANN;
             string imgNumber;
             Mat grayscaleImg = new Mat();
             Mat histImg = new Mat();
@@ -81,6 +82,9 @@ namespace Salamander
 
             string folderResizedImgFaces = @"testImages/ResizedFaces";
             string folderProcessedImgFaces = @"testImages/ProcessedFaces/";
+            string folderProcessedSobel = @"testImages/ProcessedSobel/";
+            string folderEasyRecog = @"testImages/ProcessedSmoothEasyRecog/";
+            string folderCannyRecog = @"testImages/ProcessedCannyRecog/";
             string imgExtension = ".bmp";
             int number = 0;
 
@@ -116,25 +120,32 @@ namespace Salamander
                 // upsamples and injects zero rows and columns ( smoothed image)
                 CvInvoke.PyrUp(downScaledImg, smoothedImg);
                 imgNumber = number.ToString();
+                finalFileNameForANN = folderEasyRecog + imgNumber + imgExtension;
                 finalFileName = folderProcessedImgFaces + imgNumber + imgExtension;
                 smoothedImg.Save(finalFileName);
+                smoothedImg.Save(finalFileNameForANN);
                 number = number + 1;
 
                 // perform Sobel operation on the img
+                // save to Sobel folder
                 CvInvoke.Sobel(smoothedImg, sobelImg, DepthType.Default, xorder, yorder);
                 imgNumber = number.ToString();
                 finalFileName = folderProcessedImgFaces + imgNumber + imgExtension;
+                finalFileNameForANN = folderProcessedSobel + imgNumber + imgExtension;
                 sobelImg.Save(finalFileName);
+                sobelImg.Save(finalFileNameForANN);
                 number = number + 1;
 
                 // perform Canny edge detection on the img
                 CvInvoke.Canny(smoothedImg, cannyImg, 100, 60);
                 imgNumber = number.ToString();
                 finalFileName = folderProcessedImgFaces + imgNumber + imgExtension;
+                finalFileNameForANN = folderCannyRecog + imgNumber + imgExtension;
                 cannyImg.Save(finalFileName);
+                cannyImg.Save(finalFileNameForANN);
                 number = number + 1;
 
-                // perform Canny edge detection on the img
+                // perform Corner Harris detection on the img
                 CvInvoke.CornerHarris(smoothedImg, eigenImg, 3,3,0.04,BorderType.Default);
                 imgNumber = number.ToString();
                 finalFileName = folderProcessedImgFaces + imgNumber + imgExtension;
