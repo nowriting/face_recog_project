@@ -54,6 +54,7 @@
             this.radioButton_Sobel = new System.Windows.Forms.RadioButton();
             this.radioButton_Canny = new System.Windows.Forms.RadioButton();
             this.radioButton_grayscale = new System.Windows.Forms.RadioButton();
+            this.cmd_CleanLibrary = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_input)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_output1)).BeginInit();
@@ -90,9 +91,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel1.Controls.Add(this.picBox_input, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.picBox_output1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.picBox_output2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_match1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbl_match2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.picBox_output2, 2, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(44, 96);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -182,7 +183,7 @@
             this.cmd_loadNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_loadNet.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_loadNet.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_loadNet.Location = new System.Drawing.Point(41, 454);
+            this.cmd_loadNet.Location = new System.Drawing.Point(12, 453);
             this.cmd_loadNet.Name = "cmd_loadNet";
             this.cmd_loadNet.Size = new System.Drawing.Size(120, 45);
             this.cmd_loadNet.TabIndex = 6;
@@ -197,7 +198,7 @@
             this.cmd_saveNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_saveNet.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_saveNet.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_saveNet.Location = new System.Drawing.Point(183, 454);
+            this.cmd_saveNet.Location = new System.Drawing.Point(138, 453);
             this.cmd_saveNet.Name = "cmd_saveNet";
             this.cmd_saveNet.Size = new System.Drawing.Size(120, 45);
             this.cmd_saveNet.TabIndex = 7;
@@ -211,7 +212,7 @@
             this.cmd_trainNet.FlatAppearance.BorderSize = 0;
             this.cmd_trainNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_trainNet.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_trainNet.Location = new System.Drawing.Point(329, 454);
+            this.cmd_trainNet.Location = new System.Drawing.Point(264, 453);
             this.cmd_trainNet.Name = "cmd_trainNet";
             this.cmd_trainNet.Size = new System.Drawing.Size(120, 45);
             this.cmd_trainNet.TabIndex = 8;
@@ -226,11 +227,11 @@
             this.cmd_stopTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_stopTraining.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_stopTraining.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_stopTraining.Location = new System.Drawing.Point(624, 412);
+            this.cmd_stopTraining.Location = new System.Drawing.Point(516, 452);
             this.cmd_stopTraining.Name = "cmd_stopTraining";
-            this.cmd_stopTraining.Size = new System.Drawing.Size(120, 90);
+            this.cmd_stopTraining.Size = new System.Drawing.Size(120, 45);
             this.cmd_stopTraining.TabIndex = 9;
-            this.cmd_stopTraining.Text = "Pārtraukt trenēšanu / Notīrīt";
+            this.cmd_stopTraining.Text = "Pārtraukt trenēšanu\r\n";
             this.cmd_stopTraining.UseVisualStyleBackColor = false;
             this.cmd_stopTraining.Click += new System.EventHandler(this.cmd_stopTraining_Click);
             // 
@@ -240,7 +241,7 @@
             this.cmd_recognize.FlatAppearance.BorderSize = 0;
             this.cmd_recognize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_recognize.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_recognize.Location = new System.Drawing.Point(474, 453);
+            this.cmd_recognize.Location = new System.Drawing.Point(390, 452);
             this.cmd_recognize.Name = "cmd_recognize";
             this.cmd_recognize.Size = new System.Drawing.Size(120, 45);
             this.cmd_recognize.TabIndex = 10;
@@ -279,14 +280,12 @@
             // radioButton_Sobel
             // 
             this.radioButton_Sobel.AutoSize = true;
-            this.radioButton_Sobel.Checked = true;
             this.radioButton_Sobel.ForeColor = System.Drawing.Color.AliceBlue;
             this.radioButton_Sobel.Location = new System.Drawing.Point(44, 29);
             this.radioButton_Sobel.Name = "radioButton_Sobel";
             this.radioButton_Sobel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.radioButton_Sobel.Size = new System.Drawing.Size(159, 24);
             this.radioButton_Sobel.TabIndex = 13;
-            this.radioButton_Sobel.TabStop = true;
             this.radioButton_Sobel.Text = "Sobel bibliotēka";
             this.radioButton_Sobel.UseVisualStyleBackColor = true;
             this.radioButton_Sobel.CheckedChanged += new System.EventHandler(this.radioButton_Sobel_CheckedChanged);
@@ -315,12 +314,28 @@
             this.radioButton_grayscale.UseVisualStyleBackColor = true;
             this.radioButton_grayscale.CheckedChanged += new System.EventHandler(this.radioButton_grayscale_CheckedChanged);
             // 
+            // cmd_CleanLibrary
+            // 
+            this.cmd_CleanLibrary.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.cmd_CleanLibrary.FlatAppearance.BorderSize = 0;
+            this.cmd_CleanLibrary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmd_CleanLibrary.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmd_CleanLibrary.ForeColor = System.Drawing.Color.AliceBlue;
+            this.cmd_CleanLibrary.Location = new System.Drawing.Point(642, 452);
+            this.cmd_CleanLibrary.Name = "cmd_CleanLibrary";
+            this.cmd_CleanLibrary.Size = new System.Drawing.Size(120, 45);
+            this.cmd_CleanLibrary.TabIndex = 16;
+            this.cmd_CleanLibrary.Text = "Iztīrīt bibliotēkas";
+            this.cmd_CleanLibrary.UseVisualStyleBackColor = false;
+            this.cmd_CleanLibrary.Click += new System.EventHandler(this.cmd_CleanLibrary_Click);
+            // 
             // f_results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(784, 511);
+            this.Controls.Add(this.cmd_CleanLibrary);
             this.Controls.Add(this.radioButton_grayscale);
             this.Controls.Add(this.radioButton_Canny);
             this.Controls.Add(this.radioButton_Sobel);
@@ -380,5 +395,6 @@
         private System.Windows.Forms.RadioButton radioButton_Sobel;
         private System.Windows.Forms.RadioButton radioButton_Canny;
         private System.Windows.Forms.RadioButton radioButton_grayscale;
+        private System.Windows.Forms.Button cmd_CleanLibrary;
     }
 }

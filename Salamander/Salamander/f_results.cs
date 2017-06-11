@@ -26,9 +26,9 @@ namespace Salamander
         string folderGenerated = @"testImages/GeneratedFaces/";
         string folderProcessed = @"testImages/ProcessedFaces/";
         string folderResized = @"testImages/ResizedFaces/";
-        string folderUseThisFolder;
+        string folderUseThisFolder = @"testImages/ProcessedSobel/";
 
-        double maxError = 5.3;
+        double ANNmaxError = 5.3;
 
         //Neural Network Object With Output Type String
         private NeuralNetwork<string> neuralNetwork = null;
@@ -167,10 +167,16 @@ namespace Salamander
 
             neuralNetwork.IterationChanged +=
                 new NeuralNetwork<string>.IterationChangedCallBack(neuralNetwork_IterationChanged);
+      
+            neuralNetwork.MaximumError = ANNmaxError;
+        }
 
-            // statically defined for now
-            
-            neuralNetwork.MaximumError = maxError;
+        public static void getMaxError(double maxError)
+        {
+            if ((maxError != 0) && (maxError > 0))
+            {
+               double ANNmaxError = maxError;
+            }
         }
 
         void neuralNetwork_IterationChanged(object o, NeuralEventArgs args)
@@ -270,15 +276,17 @@ namespace Salamander
             if (MatchedHigh != "?")
             {
                 // replaced textBoxTrainingBrowse.Text with folderProcessedSobel
-                picBox_output1.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedHigh + ".bmp"),
-                    picBox_output1.Width, picBox_output1.Height);
+                // picBox_output1.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedHigh + ".bmp"),
+                //    picBox_output1.Width, picBox_output1.Height);
+                picBox_output1.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedHigh + ".bmp"));
             }
                 
             if (MatchedLow != "?")
             {
                 // replaced textBoxTrainingBrowse.Text with folderProcessedSobel
-                picBox_output2.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedLow + ".bmp"),
-                    picBox_output2.Width, picBox_output2.Height);
+                //picBox_output2.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedLow + ".bmp"),
+                //    picBox_output2.Width, picBox_output2.Height);
+                picBox_output2.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedLow + ".bmp"));
             }
         }
 
@@ -286,7 +294,14 @@ namespace Salamander
         {
             ManualReset.Set();
 
-            txtBox_info.Text = String.Empty;
+        }
+
+        private void cmd_CleanLibrary_Click(object sender, EventArgs e)
+        {
+
+            //ManualReset.Set();
+
+            //txtBox_info.Text = String.Empty;
 
             deleteGenerated(folderGenerated);
             deleteResized(folderResized);
@@ -294,6 +309,7 @@ namespace Salamander
             deleteProcessedCannyRecog(folderCannyRecog);
             deleteProcessed(folderProcessed);
             deleteProcessedSmooth(folderEasyRecog);
+
         }
 
         private void deleteProcessedSmooth(string folderEasyRecog)
@@ -472,7 +488,10 @@ namespace Salamander
             radioButton_grayscale.Checked = false;
             radioButton_Sobel.Checked = true;
 
-            folderUseThisFolder = folderProcessedSobel;
+            // folderUseThisFolder = folderProcessedSobel;
+
+            // Program.Run();
+            // ProcessGeneratedFaces.GetImg();
         }
 
         private void radioButton_Canny_CheckedChanged(object sender, EventArgs e)
@@ -481,7 +500,10 @@ namespace Salamander
             radioButton_grayscale.Checked = false;
             radioButton_Canny.Checked = true;
 
-            folderUseThisFolder = folderCannyRecog;
+            // folderUseThisFolder = folderCannyRecog;
+
+            // Program.Run();
+            // ProcessGeneratedFaces.GetImg();
         }
 
         private void radioButton_grayscale_CheckedChanged(object sender, EventArgs e)
@@ -490,7 +512,10 @@ namespace Salamander
             radioButton_Canny.Checked = false;
             radioButton_grayscale.Checked = true;
 
-            folderUseThisFolder = folderEasyRecog;
+            // folderUseThisFolder = folderEasyRecog;
+
+            // Program.Run();
+            // ProcessGeneratedFaces.GetImg();
         }
     }
 }

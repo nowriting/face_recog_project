@@ -30,7 +30,7 @@ namespace Salamander
             
         }
 
-        static void Run()
+        public static void Run()
         {
             IImage image;
             Bitmap bmpImg;

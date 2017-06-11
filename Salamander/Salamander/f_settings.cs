@@ -12,6 +12,8 @@ namespace Salamander
 {
     public partial class f_settings : Form
     {
+        double maxError;
+
         public f_settings()
         {
             InitializeComponent();
@@ -40,6 +42,9 @@ namespace Salamander
 
         private void txtBox_maxError_TextChanged(object sender, EventArgs e)
         {
+            maxError = double.Parse(txtBox_maxError.Text);
+
+            f_results.getMaxError(maxError);
 
         }
     }
