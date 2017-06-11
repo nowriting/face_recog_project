@@ -51,6 +51,9 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.cmd_chooseImg = new System.Windows.Forms.Button();
+            this.radioButton_Sobel = new System.Windows.Forms.RadioButton();
+            this.radioButton_Canny = new System.Windows.Forms.RadioButton();
+            this.radioButton_grayscale = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_input)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox_output1)).BeginInit();
@@ -63,7 +66,7 @@
             this.cmd_back.FlatAppearance.BorderSize = 0;
             this.cmd_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_back.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_back.Location = new System.Drawing.Point(411, 29);
+            this.cmd_back.Location = new System.Drawing.Point(504, 168);
             this.cmd_back.Name = "cmd_back";
             this.cmd_back.Size = new System.Drawing.Size(240, 45);
             this.cmd_back.TabIndex = 0;
@@ -73,7 +76,7 @@
             // 
             // txtBox_info
             // 
-            this.txtBox_info.Location = new System.Drawing.Point(41, 175);
+            this.txtBox_info.Location = new System.Drawing.Point(41, 280);
             this.txtBox_info.Multiline = true;
             this.txtBox_info.Name = "txtBox_info";
             this.txtBox_info.Size = new System.Drawing.Size(275, 128);
@@ -82,44 +85,43 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel1.Controls.Add(this.picBox_input, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.picBox_output1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.picBox_output2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_match1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbl_match2, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(44, 26);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(44, 96);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(275, 122);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(378, 157);
             this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // picBox_input
             // 
             this.picBox_input.Location = new System.Drawing.Point(3, 3);
             this.picBox_input.Name = "picBox_input";
-            this.picBox_input.Size = new System.Drawing.Size(84, 84);
+            this.picBox_input.Size = new System.Drawing.Size(119, 114);
             this.picBox_input.TabIndex = 0;
             this.picBox_input.TabStop = false;
             // 
             // picBox_output1
             // 
-            this.picBox_output1.Location = new System.Drawing.Point(93, 3);
+            this.picBox_output1.Location = new System.Drawing.Point(128, 3);
             this.picBox_output1.Name = "picBox_output1";
-            this.picBox_output1.Size = new System.Drawing.Size(84, 84);
+            this.picBox_output1.Size = new System.Drawing.Size(119, 114);
             this.picBox_output1.TabIndex = 1;
             this.picBox_output1.TabStop = false;
             // 
             // picBox_output2
             // 
-            this.picBox_output2.Location = new System.Drawing.Point(183, 3);
+            this.picBox_output2.Location = new System.Drawing.Point(253, 3);
             this.picBox_output2.Name = "picBox_output2";
-            this.picBox_output2.Size = new System.Drawing.Size(89, 84);
+            this.picBox_output2.Size = new System.Drawing.Size(120, 114);
             this.picBox_output2.TabIndex = 2;
             this.picBox_output2.TabStop = false;
             // 
@@ -128,7 +130,7 @@
             this.lbl_match1.AutoSize = true;
             this.lbl_match1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_match1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_match1.Location = new System.Drawing.Point(93, 90);
+            this.lbl_match1.Location = new System.Drawing.Point(128, 120);
             this.lbl_match1.Name = "lbl_match1";
             this.lbl_match1.Size = new System.Drawing.Size(15, 15);
             this.lbl_match1.TabIndex = 3;
@@ -138,7 +140,7 @@
             // 
             this.lbl_match2.AutoSize = true;
             this.lbl_match2.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_match2.Location = new System.Drawing.Point(183, 90);
+            this.lbl_match2.Location = new System.Drawing.Point(253, 120);
             this.lbl_match2.Name = "lbl_match2";
             this.lbl_match2.Size = new System.Drawing.Size(0, 20);
             this.lbl_match2.TabIndex = 4;
@@ -147,7 +149,7 @@
             // 
             this.lbl_error.AutoSize = true;
             this.lbl_error.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_error.Location = new System.Drawing.Point(363, 177);
+            this.lbl_error.Location = new System.Drawing.Point(364, 285);
             this.lbl_error.Name = "lbl_error";
             this.lbl_error.Size = new System.Drawing.Size(142, 20);
             this.lbl_error.TabIndex = 3;
@@ -157,7 +159,7 @@
             // 
             this.lbl_iteration.AutoSize = true;
             this.lbl_iteration.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_iteration.Location = new System.Drawing.Point(363, 216);
+            this.lbl_iteration.Location = new System.Drawing.Point(364, 324);
             this.lbl_iteration.Name = "lbl_iteration";
             this.lbl_iteration.Size = new System.Drawing.Size(146, 20);
             this.lbl_iteration.TabIndex = 4;
@@ -167,7 +169,7 @@
             // 
             this.lbl_time.AutoSize = true;
             this.lbl_time.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_time.Location = new System.Drawing.Point(363, 249);
+            this.lbl_time.Location = new System.Drawing.Point(364, 357);
             this.lbl_time.Name = "lbl_time";
             this.lbl_time.Size = new System.Drawing.Size(125, 20);
             this.lbl_time.TabIndex = 5;
@@ -180,7 +182,7 @@
             this.cmd_loadNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_loadNet.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_loadNet.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_loadNet.Location = new System.Drawing.Point(27, 340);
+            this.cmd_loadNet.Location = new System.Drawing.Point(41, 454);
             this.cmd_loadNet.Name = "cmd_loadNet";
             this.cmd_loadNet.Size = new System.Drawing.Size(120, 45);
             this.cmd_loadNet.TabIndex = 6;
@@ -195,7 +197,7 @@
             this.cmd_saveNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_saveNet.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_saveNet.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_saveNet.Location = new System.Drawing.Point(153, 340);
+            this.cmd_saveNet.Location = new System.Drawing.Point(183, 454);
             this.cmd_saveNet.Name = "cmd_saveNet";
             this.cmd_saveNet.Size = new System.Drawing.Size(120, 45);
             this.cmd_saveNet.TabIndex = 7;
@@ -209,7 +211,7 @@
             this.cmd_trainNet.FlatAppearance.BorderSize = 0;
             this.cmd_trainNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_trainNet.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_trainNet.Location = new System.Drawing.Point(279, 340);
+            this.cmd_trainNet.Location = new System.Drawing.Point(329, 454);
             this.cmd_trainNet.Name = "cmd_trainNet";
             this.cmd_trainNet.Size = new System.Drawing.Size(120, 45);
             this.cmd_trainNet.TabIndex = 8;
@@ -224,11 +226,11 @@
             this.cmd_stopTraining.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_stopTraining.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmd_stopTraining.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_stopTraining.Location = new System.Drawing.Point(531, 340);
+            this.cmd_stopTraining.Location = new System.Drawing.Point(624, 412);
             this.cmd_stopTraining.Name = "cmd_stopTraining";
-            this.cmd_stopTraining.Size = new System.Drawing.Size(120, 45);
+            this.cmd_stopTraining.Size = new System.Drawing.Size(120, 90);
             this.cmd_stopTraining.TabIndex = 9;
-            this.cmd_stopTraining.Text = "Pārtraukt trenēšanu";
+            this.cmd_stopTraining.Text = "Pārtraukt trenēšanu / Notīrīt";
             this.cmd_stopTraining.UseVisualStyleBackColor = false;
             this.cmd_stopTraining.Click += new System.EventHandler(this.cmd_stopTraining_Click);
             // 
@@ -238,7 +240,7 @@
             this.cmd_recognize.FlatAppearance.BorderSize = 0;
             this.cmd_recognize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_recognize.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_recognize.Location = new System.Drawing.Point(405, 340);
+            this.cmd_recognize.Location = new System.Drawing.Point(474, 453);
             this.cmd_recognize.Name = "cmd_recognize";
             this.cmd_recognize.Size = new System.Drawing.Size(120, 45);
             this.cmd_recognize.TabIndex = 10;
@@ -250,7 +252,7 @@
             // 
             this.lbl_status.AutoSize = true;
             this.lbl_status.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_status.Location = new System.Drawing.Point(363, 280);
+            this.lbl_status.Location = new System.Drawing.Point(364, 388);
             this.lbl_status.Name = "lbl_status";
             this.lbl_status.Size = new System.Drawing.Size(177, 20);
             this.lbl_status.TabIndex = 11;
@@ -266,7 +268,7 @@
             this.cmd_chooseImg.FlatAppearance.BorderSize = 0;
             this.cmd_chooseImg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmd_chooseImg.ForeColor = System.Drawing.Color.AliceBlue;
-            this.cmd_chooseImg.Location = new System.Drawing.Point(411, 89);
+            this.cmd_chooseImg.Location = new System.Drawing.Point(504, 99);
             this.cmd_chooseImg.Name = "cmd_chooseImg";
             this.cmd_chooseImg.Size = new System.Drawing.Size(240, 45);
             this.cmd_chooseImg.TabIndex = 12;
@@ -274,12 +276,54 @@
             this.cmd_chooseImg.UseVisualStyleBackColor = false;
             this.cmd_chooseImg.Click += new System.EventHandler(this.cmd_chooseImg_Click);
             // 
+            // radioButton_Sobel
+            // 
+            this.radioButton_Sobel.AutoSize = true;
+            this.radioButton_Sobel.Checked = true;
+            this.radioButton_Sobel.ForeColor = System.Drawing.Color.AliceBlue;
+            this.radioButton_Sobel.Location = new System.Drawing.Point(44, 29);
+            this.radioButton_Sobel.Name = "radioButton_Sobel";
+            this.radioButton_Sobel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.radioButton_Sobel.Size = new System.Drawing.Size(159, 24);
+            this.radioButton_Sobel.TabIndex = 13;
+            this.radioButton_Sobel.TabStop = true;
+            this.radioButton_Sobel.Text = "Sobel bibliotēka";
+            this.radioButton_Sobel.UseVisualStyleBackColor = true;
+            this.radioButton_Sobel.CheckedChanged += new System.EventHandler(this.radioButton_Sobel_CheckedChanged);
+            // 
+            // radioButton_Canny
+            // 
+            this.radioButton_Canny.AutoSize = true;
+            this.radioButton_Canny.ForeColor = System.Drawing.Color.AliceBlue;
+            this.radioButton_Canny.Location = new System.Drawing.Point(253, 29);
+            this.radioButton_Canny.Name = "radioButton_Canny";
+            this.radioButton_Canny.Size = new System.Drawing.Size(164, 24);
+            this.radioButton_Canny.TabIndex = 14;
+            this.radioButton_Canny.Text = "Canny bibliotēka";
+            this.radioButton_Canny.UseVisualStyleBackColor = true;
+            this.radioButton_Canny.CheckedChanged += new System.EventHandler(this.radioButton_Canny_CheckedChanged);
+            // 
+            // radioButton_grayscale
+            // 
+            this.radioButton_grayscale.AutoSize = true;
+            this.radioButton_grayscale.ForeColor = System.Drawing.Color.AliceBlue;
+            this.radioButton_grayscale.Location = new System.Drawing.Point(504, 29);
+            this.radioButton_grayscale.Name = "radioButton_grayscale";
+            this.radioButton_grayscale.Size = new System.Drawing.Size(218, 24);
+            this.radioButton_grayscale.TabIndex = 15;
+            this.radioButton_grayscale.Text = "Virs-paraugu bibliotēka";
+            this.radioButton_grayscale.UseVisualStyleBackColor = true;
+            this.radioButton_grayscale.CheckedChanged += new System.EventHandler(this.radioButton_grayscale_CheckedChanged);
+            // 
             // f_results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(684, 411);
+            this.ClientSize = new System.Drawing.Size(784, 511);
+            this.Controls.Add(this.radioButton_grayscale);
+            this.Controls.Add(this.radioButton_Canny);
+            this.Controls.Add(this.radioButton_Sobel);
             this.Controls.Add(this.cmd_chooseImg);
             this.Controls.Add(this.lbl_status);
             this.Controls.Add(this.cmd_recognize);
@@ -296,7 +340,7 @@
             this.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.MinimumSize = new System.Drawing.Size(700, 450);
+            this.MinimumSize = new System.Drawing.Size(800, 550);
             this.Name = "f_results";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rezultāts";
@@ -333,5 +377,8 @@
         private System.Windows.Forms.Button cmd_chooseImg;
         private System.Windows.Forms.Label lbl_match1;
         private System.Windows.Forms.Label lbl_match2;
+        private System.Windows.Forms.RadioButton radioButton_Sobel;
+        private System.Windows.Forms.RadioButton radioButton_Canny;
+        private System.Windows.Forms.RadioButton radioButton_grayscale;
     }
 }

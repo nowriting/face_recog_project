@@ -37,5 +37,10 @@ namespace Salamander
             openWin.Show();
             this.Close();
         }
+
+        private void txtBox_maxError_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

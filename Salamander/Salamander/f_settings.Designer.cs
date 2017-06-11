@@ -114,6 +114,7 @@
             this.txtBox_maxError.Name = "txtBox_maxError";
             this.txtBox_maxError.Size = new System.Drawing.Size(120, 27);
             this.txtBox_maxError.TabIndex = 6;
+            this.txtBox_maxError.TextChanged += new System.EventHandler(this.txtBox_maxError_TextChanged);
             // 
             // f_settings
             // 

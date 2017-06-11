@@ -23,6 +23,12 @@ namespace Salamander
         string folderProcessedSobel = @"testImages/ProcessedSobel/";
         string folderEasyRecog = @"testImages/ProcessedSmoothEasyRecog/";
         string folderCannyRecog = @"testImages/ProcessedCannyRecog/";
+        string folderGenerated = @"testImages/GeneratedFaces/";
+        string folderProcessed = @"testImages/ProcessedFaces/";
+        string folderResized = @"testImages/ResizedFaces/";
+        string folderUseThisFolder;
+
+        double maxError = 5.3;
 
         //Neural Network Object With Output Type String
         private NeuralNetwork<string> neuralNetwork = null;
@@ -66,7 +72,7 @@ namespace Salamander
                 // textBoxTrainingBrowse.Text = Path.GetFullPath(AppSettings["PatternsDirectory"]);
                 // textBoxMaxError.Text = AppSettings["MaxError"];
 
-                string[] Images = Directory.GetFiles(folderCannyRecog, "*.bmp");
+                string[] Images = Directory.GetFiles(folderUseThisFolder, "*.bmp");
                 NumOfPatterns = Images.Length;
 
                 av_ImageHeight = 0;
@@ -103,7 +109,7 @@ namespace Salamander
         {
             txtBox_info.AppendText("Apmācības datu ģenerēšana..");
 
-            string[] Patterns = Directory.GetFiles(folderCannyRecog, "*.bmp");
+            string[] Patterns = Directory.GetFiles(folderUseThisFolder, "*.bmp");
 
             TrainingSet = new Dictionary<string, double[]>(Patterns.Length);
             foreach (string s in Patterns)
@@ -163,7 +169,7 @@ namespace Salamander
                 new NeuralNetwork<string>.IterationChangedCallBack(neuralNetwork_IterationChanged);
 
             // statically defined for now
-            double maxError = 5.3;
+            
             neuralNetwork.MaximumError = maxError;
         }
 
@@ -264,14 +270,14 @@ namespace Salamander
             if (MatchedHigh != "?")
             {
                 // replaced textBoxTrainingBrowse.Text with folderProcessedSobel
-                picBox_output1.Image = new Bitmap(new Bitmap(folderCannyRecog + "\\" + MatchedHigh + ".bmp"),
+                picBox_output1.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedHigh + ".bmp"),
                     picBox_output1.Width, picBox_output1.Height);
             }
                 
             if (MatchedLow != "?")
             {
                 // replaced textBoxTrainingBrowse.Text with folderProcessedSobel
-                picBox_output2.Image = new Bitmap(new Bitmap(folderCannyRecog + "\\" + MatchedLow + ".bmp"),
+                picBox_output2.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedLow + ".bmp"),
                     picBox_output2.Width, picBox_output2.Height);
             }
         }
@@ -279,6 +285,111 @@ namespace Salamander
         private void cmd_stopTraining_Click(object sender, EventArgs e)
         {
             ManualReset.Set();
+
+            txtBox_info.Text = String.Empty;
+
+            deleteGenerated(folderGenerated);
+            deleteResized(folderResized);
+            deleteProcessedSobel(folderProcessedSobel);
+            deleteProcessedCannyRecog(folderCannyRecog);
+            deleteProcessed(folderProcessed);
+            deleteProcessedSmooth(folderEasyRecog);
+        }
+
+        private void deleteProcessedSmooth(string folderEasyRecog)
+        {
+            string folderToEmpty = folderEasyRecog;
+
+            DirectoryInfo deleteAllInThisFolder = new DirectoryInfo(folderToEmpty);
+
+            foreach (FileInfo file in deleteAllInThisFolder.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo directory in deleteAllInThisFolder.GetDirectories())
+            {
+                directory.Delete(true);
+            }
+        }
+
+        private void deleteProcessed(string folderProcessed)
+        {
+            string folderToEmpty = folderProcessed;
+
+            DirectoryInfo deleteAllInThisFolder = new DirectoryInfo(folderToEmpty);
+
+            foreach (FileInfo file in deleteAllInThisFolder.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo directory in deleteAllInThisFolder.GetDirectories())
+            {
+                directory.Delete(true);
+            }
+        }
+
+        private void deleteProcessedSobel(string folderProcessedSobel)
+        {
+            string folderToEmpty = folderProcessedSobel;
+
+            DirectoryInfo deleteAllInThisFolder = new DirectoryInfo(folderToEmpty);
+
+            foreach (FileInfo file in deleteAllInThisFolder.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo directory in deleteAllInThisFolder.GetDirectories())
+            {
+                directory.Delete(true);
+            }
+        }
+
+        private void deleteResized(string folderResized)
+        {
+            string folderToEmpty = folderResized;
+
+            DirectoryInfo deleteAllInThisFolder = new DirectoryInfo(folderToEmpty);
+
+            foreach (FileInfo file in deleteAllInThisFolder.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo directory in deleteAllInThisFolder.GetDirectories())
+            {
+                directory.Delete(true);
+            }
+        }
+
+        private void deleteGenerated(string folderGenerated)
+        {
+            string folderToEmpty = folderGenerated;
+
+            DirectoryInfo deleteAllInThisFolder = new DirectoryInfo(folderToEmpty);
+
+            foreach (FileInfo file in deleteAllInThisFolder.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo directory in deleteAllInThisFolder.GetDirectories())
+            {
+                directory.Delete(true);
+            }
+        }
+
+        private void deleteProcessedCannyRecog(string folderCannyRecog)
+        {
+            string folderToEmpty = folderCannyRecog;
+
+            DirectoryInfo deleteAllInThisFolder = new DirectoryInfo(folderToEmpty);
+
+            foreach (FileInfo file in deleteAllInThisFolder.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo directory in deleteAllInThisFolder.GetDirectories())
+            {
+                directory.Delete(true);
+            }
         }
 
         private void cmd_chooseImg_Click(object sender, EventArgs e)
@@ -352,11 +463,34 @@ namespace Salamander
                 lbl_iteration.Text = "Iterācija nr: " + ((int)o).ToString();
             }
         }
+
         #endregion
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        private void radioButton_Sobel_CheckedChanged(object sender, EventArgs e)
         {
+            radioButton_Canny.Checked = false;
+            radioButton_grayscale.Checked = false;
+            radioButton_Sobel.Checked = true;
 
+            folderUseThisFolder = folderProcessedSobel;
+        }
+
+        private void radioButton_Canny_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton_Sobel.Checked = false;
+            radioButton_grayscale.Checked = false;
+            radioButton_Canny.Checked = true;
+
+            folderUseThisFolder = folderCannyRecog;
+        }
+
+        private void radioButton_grayscale_CheckedChanged(object sender, EventArgs e)
+        {
+            radioButton_Sobel.Checked = false;
+            radioButton_Canny.Checked = false;
+            radioButton_grayscale.Checked = true;
+
+            folderUseThisFolder = folderEasyRecog;
         }
     }
 }
