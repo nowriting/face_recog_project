@@ -86,43 +86,43 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel1.Controls.Add(this.picBox_input, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.picBox_output1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbl_match1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.lbl_match2, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.picBox_output1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.picBox_output2, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(44, 96);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(41, 68);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(378, 157);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(392, 194);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // picBox_input
             // 
             this.picBox_input.Location = new System.Drawing.Point(3, 3);
             this.picBox_input.Name = "picBox_input";
-            this.picBox_input.Size = new System.Drawing.Size(119, 114);
+            this.picBox_input.Size = new System.Drawing.Size(120, 120);
             this.picBox_input.TabIndex = 0;
             this.picBox_input.TabStop = false;
             // 
             // picBox_output1
             // 
-            this.picBox_output1.Location = new System.Drawing.Point(128, 3);
+            this.picBox_output1.Location = new System.Drawing.Point(133, 3);
             this.picBox_output1.Name = "picBox_output1";
-            this.picBox_output1.Size = new System.Drawing.Size(119, 114);
+            this.picBox_output1.Size = new System.Drawing.Size(120, 120);
             this.picBox_output1.TabIndex = 1;
             this.picBox_output1.TabStop = false;
             // 
             // picBox_output2
             // 
-            this.picBox_output2.Location = new System.Drawing.Point(253, 3);
+            this.picBox_output2.Location = new System.Drawing.Point(263, 3);
             this.picBox_output2.Name = "picBox_output2";
-            this.picBox_output2.Size = new System.Drawing.Size(120, 114);
+            this.picBox_output2.Size = new System.Drawing.Size(120, 120);
             this.picBox_output2.TabIndex = 2;
             this.picBox_output2.TabStop = false;
             // 
@@ -131,7 +131,7 @@
             this.lbl_match1.AutoSize = true;
             this.lbl_match1.Font = new System.Drawing.Font("MS Reference Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_match1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_match1.Location = new System.Drawing.Point(128, 120);
+            this.lbl_match1.Location = new System.Drawing.Point(133, 150);
             this.lbl_match1.Name = "lbl_match1";
             this.lbl_match1.Size = new System.Drawing.Size(15, 15);
             this.lbl_match1.TabIndex = 3;
@@ -141,7 +141,7 @@
             // 
             this.lbl_match2.AutoSize = true;
             this.lbl_match2.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_match2.Location = new System.Drawing.Point(253, 120);
+            this.lbl_match2.Location = new System.Drawing.Point(263, 150);
             this.lbl_match2.Name = "lbl_match2";
             this.lbl_match2.Size = new System.Drawing.Size(0, 20);
             this.lbl_match2.TabIndex = 4;
@@ -150,7 +150,7 @@
             // 
             this.lbl_error.AutoSize = true;
             this.lbl_error.ForeColor = System.Drawing.Color.AliceBlue;
-            this.lbl_error.Location = new System.Drawing.Point(364, 285);
+            this.lbl_error.Location = new System.Drawing.Point(364, 280);
             this.lbl_error.Name = "lbl_error";
             this.lbl_error.Size = new System.Drawing.Size(142, 20);
             this.lbl_error.TabIndex = 3;

@@ -26,9 +26,15 @@ namespace Salamander
         string folderGenerated = @"testImages/GeneratedFaces/";
         string folderProcessed = @"testImages/ProcessedFaces/";
         string folderResized = @"testImages/ResizedFaces/";
-        string folderUseThisFolder = @"testImages/ProcessedSobel/";
+        string folderUseThisFolder = @"testImages/ProcessedSmoothEasyRecog/";
 
+        Bitmap resizeMatchHigh;
+        Bitmap resizeMatchLow;
+        Bitmap showHighMatch;
+        Bitmap showLowMatch;
         double ANNmaxError = 5.3;
+        int maxHeight = 120;
+        int maxWidth = 120;
 
         //Neural Network Object With Output Type String
         private NeuralNetwork<string> neuralNetwork = null;
@@ -278,7 +284,10 @@ namespace Salamander
                 // replaced textBoxTrainingBrowse.Text with folderProcessedSobel
                 // picBox_output1.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedHigh + ".bmp"),
                 //    picBox_output1.Width, picBox_output1.Height);
-                picBox_output1.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedHigh + ".bmp"));
+                resizeMatchHigh = new Bitmap(folderUseThisFolder + "\\" + MatchedHigh + ".bmp");
+                showHighMatch = resizeLarger(resizeMatchHigh);
+                picBox_output1.Image = resizeMatchHigh;
+
             }
                 
             if (MatchedLow != "?")
@@ -286,8 +295,37 @@ namespace Salamander
                 // replaced textBoxTrainingBrowse.Text with folderProcessedSobel
                 //picBox_output2.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedLow + ".bmp"),
                 //    picBox_output2.Width, picBox_output2.Height);
-                picBox_output2.Image = new Bitmap(new Bitmap(folderUseThisFolder + "\\" + MatchedLow + ".bmp"));
+                resizeMatchLow = new Bitmap(folderUseThisFolder + "\\" + MatchedLow + ".bmp");
+                showLowMatch = resizeLarger(resizeMatchLow);
+                picBox_output2.Image = showLowMatch;
             }
+        }
+
+        private Bitmap resizeLarger(Bitmap resizeMatch)
+        {
+            double ratioX;
+            double ratioY;
+            double ratio;
+            int newWidth;
+            int newHeight;
+            Bitmap resizedImg;
+
+            // calculate img width/height ratio
+            ratioX = (double)maxWidth / resizeMatch.Width;
+            ratioY = (double)maxHeight / resizeMatch.Height;
+            ratio = Math.Min(ratioX, ratioY);
+            // calculate the new img size
+            newWidth = (int)(resizeMatch.Width * ratio);
+            newHeight = (int)(resizeMatch.Height * ratio);
+
+            // draw empty bitmap where to store the image
+            resizedImg = new Bitmap(newWidth, newHeight);
+
+            Graphics g = Graphics.FromImage(resizedImg);
+            // draw resized bitmap
+            g.DrawImage(resizeMatch, 0, 0, newWidth, newHeight);
+            
+            return resizedImg;
         }
 
         private void cmd_stopTraining_Click(object sender, EventArgs e)
