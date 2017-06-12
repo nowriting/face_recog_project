@@ -28,6 +28,8 @@ namespace Salamander
         string folderResized = @"testImages/ResizedFaces/";
         string folderUseThisFolder = @"testImages/ProcessedSmoothEasyRecog/";
 
+        Bitmap inputImg;
+        Bitmap inputImgResized;
         Bitmap resizeMatchHigh;
         Bitmap resizeMatchLow;
         Bitmap showHighMatch;
@@ -454,10 +456,10 @@ namespace Salamander
             if (browsefiles.ShowDialog() == DialogResult.OK)
             {
                 chosenImg = browsefiles.FileName;
-                showProcessProcessImg.processCropImg(chosenImg);
-
-                Pic = Image.FromFile(chosenImgResized);
-                picBox_input.Image = Pic;
+                inputImg = new Bitmap(chosenImg);
+                inputImgResized = resizeLarger(inputImg);
+                
+                picBox_input.Image = inputImgResized;
             }
         }
 
