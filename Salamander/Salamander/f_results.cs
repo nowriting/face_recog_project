@@ -286,7 +286,7 @@ namespace Salamander
                 //    picBox_output1.Width, picBox_output1.Height);
                 resizeMatchHigh = new Bitmap(folderUseThisFolder + "\\" + MatchedHigh + ".bmp");
                 showHighMatch = resizeLarger(resizeMatchHigh);
-                picBox_output1.Image = resizeMatchHigh;
+                picBox_output1.Image = showHighMatch;
 
             }
                 
